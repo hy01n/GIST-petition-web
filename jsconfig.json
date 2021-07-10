@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
     "baseUrl": "src"
   },
-  "includes": ["src"],
-  "exclude": ["dotenv"]
+  "includes": ["src"]
 }

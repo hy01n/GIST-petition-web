@@ -2,7 +2,7 @@ import React from 'react';
 import 'pages/Main/Main.css';
 
 const Main = () => {
-  return <div>test</div>;
+  return <div>Main Page</div>;
 };
 
 export default Main;
