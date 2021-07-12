@@ -1,7 +1,8 @@
-modules.exports = {
+{
   "env": {
     "browser": true,
     "es6": true,
+    "amd": true,
     "node": true
   },
   "parser": "babel-eslint",
@@ -12,7 +13,12 @@ modules.exports = {
     "plugin:prettier/recommended"
   ],
   "settings": {
-    "react": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+    "eact": {
       "version": "detect"
     }
   },
@@ -23,19 +29,21 @@ modules.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "prettier"
-  ],
+  "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "prettier/prettier": 0,
+    "import/prefer-default-export": 0,
+    "react/prop-types": "off"
   },
   "globals": {
-    "React": "writable"
+    "React": "writable",
+    "module": false,
+    "inject": false,
+    "document": false
   }
 }
