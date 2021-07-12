@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+body {margin:0 autos; align-items:center;}
+#precaution{margin: 50px; margin-top: 0; border:#c6c6c7 groove 4px;padding: 30px; width: 1000px; background-color: rgb(250, 249, 250);opacity: 0.8;}
+ul{margin:30px; padding:10px;}
+li{margin:10px;}
