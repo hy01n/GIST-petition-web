@@ -8,6 +8,8 @@ const Step = ({ history }) => {
     category: '',
     content: '',
   });
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
   const handleComplete = () => {
     // const res = axios.post('');
     // 작성된 글 페이지로 이동
@@ -19,6 +21,19 @@ const Step = ({ history }) => {
   };
   return (
     <Container>
+      {showConfirmModal && (
+        <ModalWrapper>
+          <div>주의사항</div>
+          <div>
+            <button type="button" onClick={() => setShowConfirmModal(false)}>
+              수정하기
+            </button>
+            <button type="button" onClick={handleComplete}>
+              작성 완료
+            </button>
+          </div>
+        </ModalWrapper>
+      )}
       <PrecautionWrapper>
         <Precuation />
       </PrecautionWrapper>
@@ -47,16 +62,11 @@ const Step = ({ history }) => {
           }
         />
         <ButtonWrapper>
-          <button type="button" onClick={handleComplete}>
-            작성 완료
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              history.push('/');
-            }}
-          >
+          <button type="button" onClick={() => history.push('/')}>
             작성 취소
+          </button>
+          <button type="button" onClick={() => setShowConfirmModal(true)}>
+            작성 완료
           </button>
         </ButtonWrapper>
       </EditorWrapper>
@@ -65,6 +75,7 @@ const Step = ({ history }) => {
 };
 
 const Container = styled.div`
+  position: relative;
   width: 800px;
 `;
 const PrecautionWrapper = styled.div`
@@ -86,5 +97,13 @@ const InputContent = styled.input`
   width: 100%;
   height: 300px;
   line-height: 10px;
+`;
+const ModalWrapper = styled.div`
+  border: 3px solid red;
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  background-color: gray;
+  z-index: 1;
 `;
 export default Step;
