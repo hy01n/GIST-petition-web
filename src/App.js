@@ -8,6 +8,7 @@ import Main from 'pages/Main/Main';
 import PostList from 'pages/PostList/PostList';
 import PostView from 'pages/PostView/PostView';
 import Step from 'pages/Step/Step';
+import MyPage from 'pages/MyPage/MyPage';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/notfound" component={NotFound} />
         <Route exact path="/petitions" component={PostList} />
-        <Route exact path="/petitions/step" component={Step} />
+        <Route exact path="/step" component={Step} />
+        <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/petitions/:id" component={PostView} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );

@@ -80,7 +80,9 @@ const PostView = ({ history, match }) => {
       ) : (
         '해당 게시글을 찾을 수 없습니다.'
       )}
-      <GoListButton onClick={() => history('/petitions')}>목록</GoListButton>
+      <GoListButton onClick={() => history.push('/petitions')}>
+        목록
+      </GoListButton>
       <CommentInputWrapper>
         <InputText value={commentValue} onChangeValue={setCommentValue} />
 
