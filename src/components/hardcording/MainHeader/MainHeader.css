@@ -1,0 +1,78 @@
+.MainHeader__Container {
+  font-size: 1rem;
+}
+
+header {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid gainsboro;
+}
+header > div {
+  position: relative;
+  width: 100%;
+}
+header > div nav {
+  padding: 100px 0 0 0;
+  width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+header > div nav > ul > li {
+  float: left;
+  position: relative;
+  font-size: 1.8rem;
+  list-style-type: none;
+}
+header > div nav li a {
+  padding: 0 15px;
+}
+header > div nav li ~ li a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 15px;
+  background: #e5e5e5;
+  transform: translateY(-50%);
+}
+
+header > div .upper_nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+header > div .upper_nav li {
+  float: left;
+  list-style-type: none;
+  font-size: 1.4rem;
+  padding: 0 5px;
+}
+header > div .upper_nav li:nth-last-child(2) a:before {
+  content: '\e97a';
+  font-family: 'xeicon';
+}
+
+.logo_image {
+  height: 4rem;
+  width: 9rem;
+  transform: translateY(-50%);
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #7c7365;
+}
