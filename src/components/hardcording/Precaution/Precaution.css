@@ -4,12 +4,17 @@ body {
   margin: 0;
   align-items: center;
 }
+
+.Precaution__Title {
+  padding: 50px;
+  margin: 0;
+}
+
 #precaution {
-  margin: 50px;
   margin-top: 0;
   border: #c6c6c7 groove 4px;
   padding: 30px;
-  width: 1000px;
+
   background-color: rgb(250, 249, 250);
   opacity: 0.8;
 }
