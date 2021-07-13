@@ -1,13 +1,16 @@
 import React from 'react';
-import PostListText from 'components/atoms/PostListText/PostListText';
+import { Link } from 'react-router-dom';
+import ListText from 'components/atoms/ListText/ListText';
 
 const Post = ({ post }) => {
   return (
     <div className="PostList__Post" key={post.id}>
-      <PostListText text="AA" />
-      <PostListText text={post.title} />
-      <PostListText text="21-07-08" />
-      <PostListText text="3명" />
+      <ListText text="AA" />
+      <Link to={`/petitions/${post.id}`}>
+        <ListText text={post.title} />
+      </Link>
+      <ListText text="21-07-08" />
+      <ListText text="3명" />
     </div>
   );
 };
