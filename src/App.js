@@ -7,6 +7,7 @@ import NotFound from 'pages/NotFound/NotFound';
 import Main from 'pages/Main/Main';
 import PostList from 'pages/PostList/PostList';
 import PostView from 'pages/PostView/PostView';
+import Step from 'pages/Step/Step';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/notfound" component={NotFound} />
         <Route exact path="/petitions" component={PostList} />
+        <Route exact path="/petitions/step" component={Step} />
         <Route exact path="/petitions/:id" component={PostView} />
       </Switch>
     </Router>
