@@ -18,10 +18,10 @@ const MainHeader = () => {
                 </a>
               </li>
               <li className="main_navcom">
-                <a href="/">모든 청원</a>
+                <a href="/petitions">모든 청원</a>
               </li>
               <li className="main_navcom">
-                <a href="/">나의 청원</a>
+                <a href="/mypage">나의 청원</a>
               </li>
               <li className="main_navcom">
                 <a href="/">건의함 모아보기</a>
@@ -43,7 +43,7 @@ const MainHeader = () => {
                 <a href="/" />
               </li> */}
               <li>
-                <a href="/">Login</a>
+                <a href="/login">Login</a>
               </li>
             </ul>
           </div>
