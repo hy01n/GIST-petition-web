@@ -1,17 +1,15 @@
 import React from 'react';
+import MainHeader from 'components/hardcording/MainHeader/MainHeader';
+import MainImg from 'components/molecules/MainImg/MainImg';
+import MainNumOfPosts from 'components/molecules/MainNumOfPosts/MainNumOfPosts';
 import './Main.css';
-
-import MainHeader from 'components/hardcoding/MainHeader/MainHeader';
-import MainImg from './MainImg';
-import MainNumOfPosts from './MainNumOfPosts';
 
 const Main = () => {
   return (
     <>
-    
-      <MainHeader></MainHeader>
-      <MainImg></MainImg>
-      <MainNumOfPosts></MainNumOfPosts>
+      <MainHeader />
+      <MainImg />
+      <MainNumOfPosts />
     </>
   );
 };
