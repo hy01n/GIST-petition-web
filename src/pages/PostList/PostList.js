@@ -2,12 +2,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import 'pages/PostList/PostList.css';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination/Pagination';
-import Posts from 'components/organisms/Posts/Posts';
-import PostListInfo from 'components/molecules/PostListInfo/PostListInfo';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
 import FilterDropDowns from 'components/molecules/FilterDropDowns/FilterDropDowns';
 import LoadingText from 'components/atoms/LoadingText/LoadingText';
 import Subject from 'components/atoms/Subject/Subject';
+import PostTable from 'components/organisms/PostTable';
 
 const PostList = () => {
   const [answered, setAnswered] = useState(false);
@@ -76,8 +75,35 @@ const PostList = () => {
             </button>
           </div>
           <div className="PostList__Content">
-            <PostListInfo />
-            <Posts posts={currentPosts(postList)} />
+            <PostTable
+              header={['분류', '제목', '청원 날짜', '참여 인원']}
+              bodys={currentPosts(postList).map((post) => [
+                {
+                  id: 1,
+                  postId: post.id,
+                  header: 'category',
+                  content: '분류1',
+                },
+                {
+                  id: 2,
+                  postId: post.id,
+                  header: 'title',
+                  content: post.title,
+                },
+                {
+                  id: 3,
+                  postId: post.id,
+                  header: 'date',
+                  content: '2020-10-25',
+                },
+                {
+                  id: 4,
+                  postId: post.id,
+                  header: 'count',
+                  content: '15',
+                },
+              ])}
+            />
             <Pagination
               currentPage={currentPage}
               postsPerPage={postsPerPage}

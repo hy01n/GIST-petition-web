@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import LoadingText from 'components/atoms/LoadingText/LoadingText';
 import Subject from 'components/atoms/Subject/Subject';
-import PostListInfo from 'components/molecules/PostListInfo/PostListInfo';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination/Pagination';
-import Posts from 'components/organisms/Posts/Posts';
+import PostTable from 'components/organisms/PostTable';
 
 const MyPage = () => {
   const [loading, setLoading] = useState(false);
@@ -43,8 +42,35 @@ const MyPage = () => {
         <div className="PostList__Container">
           <Subject text="내 청원 보기" />
           <div className="PostList__Content">
-            <PostListInfo />
-            <Posts posts={currentPosts(postList)} />
+            <PostTable
+              header={['분류', '제목', '청원 날짜', '참여 인원']}
+              bodys={currentPosts(postList).map((post) => [
+                {
+                  id: 1,
+                  postId: post.id,
+                  header: 'category',
+                  content: '분류1',
+                },
+                {
+                  id: 2,
+                  postId: post.id,
+                  header: 'title',
+                  content: post.title,
+                },
+                {
+                  id: 3,
+                  postId: post.id,
+                  header: 'date',
+                  content: '2020-10-25',
+                },
+                {
+                  id: 4,
+                  postId: post.id,
+                  header: 'count',
+                  content: '15',
+                },
+              ])}
+            />
             <Pagination
               currentPage={currentPage}
               postsPerPage={postsPerPage}
