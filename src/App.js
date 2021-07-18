@@ -9,10 +9,12 @@ import PostList from 'pages/PostList/PostList';
 import PostView from 'pages/PostView/PostView';
 import Step from 'pages/Step/Step';
 import MyPage from 'pages/MyPage/MyPage';
+import MainHeader from 'components/hardcording/MainHeader/MainHeader';
 
 function App() {
   return (
     <Router>
+      <MainHeader />
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/signup" component={SignUp} />
