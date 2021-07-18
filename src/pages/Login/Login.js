@@ -25,6 +25,7 @@ const Login = () => {
         placeholder2="Password"
       />
       <SubmitButton text="로그인" />
+      <InternalLink text="회원가입" href="/signup"/>
       <InternalLink text="아이디" />
       /
       <InternalLink text="비밀번호를 잊으셨나요?" />

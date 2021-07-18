@@ -7,11 +7,11 @@ const InputButtonPair = ({
   placeholder,
   text,
 }) => {
-  return
-  (<div>
-    <RequiredInput type={type} placeholder={placeholder} />
-    <SubmitButton text={text}> </SubmitButton>
-  </div>);
+  return(
+    <div>
+      <RequiredInput type={type} placeholder={placeholder} />
+      <SubmitButton text={text} />
+    </div>);
 };
 
 export default InputButtonPair;
