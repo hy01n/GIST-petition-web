@@ -9,6 +9,8 @@ import PostList from 'pages/PostList/PostList';
 import PostView from 'pages/PostView/PostView';
 import Step from 'pages/Step/Step';
 import MyPage from 'pages/MyPage/MyPage';
+import ForgetID from 'pages/ForgetID/ForgetID';
+import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route exact path="/step" component={Step} />
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/petitions/:id" component={PostView} />
+        <Route exact path="/forgetid" component={ForgetID} />
+        <Route exact path="/forgetpwd" component={ForgetPWD} />
         <Route component={NotFound} />
       </Switch>
     </Router>
