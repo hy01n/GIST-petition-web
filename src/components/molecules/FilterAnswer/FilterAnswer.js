@@ -1,12 +1,13 @@
 import React from 'react';
-import FilterButton from 'components/atoms/FilterButton/FilterButton';
+import FilterBlock from 'components/atoms/FilterBlock/FilterBlock';
+import styled from 'styled-components';
 
-const FilterAnswer = ({ answered, setAnswered }) => {
+const FilterAnswer = ({ answered, handleFilter }) => {
   return (
-    <div className="PostList__Filter__Answer">
-      <FilterButton
-        text="답변 안 됨"
-        handleClick={() => setAnswered(false)}
+    <FilterBlockWrapper>
+      <FilterBlock
+        text="답변 대기 중"
+        handleClick={() => handleFilter(false)}
         buttonStyle={
           !answered
             ? {
@@ -15,19 +16,35 @@ const FilterAnswer = ({ answered, setAnswered }) => {
             : null
         }
       />
-      <FilterButton
+      <FilterBlock
         text="답변 완료"
-        handleClick={() => setAnswered(true)}
+        handleClick={() => handleFilter(true)}
         buttonStyle={
           answered
             ? {
-                color: 'red',
+                color: '#0a1645',
+                borderottomColor: '#0a1645',
               }
             : null
         }
+        borderRight
       />
-    </div>
+    </FilterBlockWrapper>
   );
 };
 
+const FilterBlockWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 59px;
+  border-bottom: 1px solid #7f7f7f;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 5px solid #0a1645;
+  }
+`;
 export default FilterAnswer;
