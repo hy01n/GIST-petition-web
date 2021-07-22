@@ -1,12 +1,14 @@
 import React from 'react';
-import MainImg from 'components/molecules/MainImg/MainImg';
+import MainVisual from 'components/molecules/MainVisual/MainVisual';
+import MainPrecautions from 'components/molecules/MainPrecautions/MainPrecautions';
 import MainNumOfPosts from 'components/molecules/MainNumOfPosts/MainNumOfPosts';
 import './Main.css';
 
 const Main = () => {
   return (
     <>
-      <MainImg />
+      <MainVisual />
+      <MainPrecautions />
       <MainNumOfPosts />
     </>
   );

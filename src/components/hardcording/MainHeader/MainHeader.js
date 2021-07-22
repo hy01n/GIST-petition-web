@@ -6,54 +6,43 @@ const activeStyle = { color: "#df3127" };
 
 const MainHeader = () => {
   return (
-    <div className="MainHeader__Container">
       <header>
-        <div>
-          <div className="upper">
-              <ul className="upper_nav">
-                <li>
-                  <Link to="/">홈</Link>
-                </li>
-                <li>
-                  <Link to="/notfound">학부 담당자</Link>
-                </li>
-                <li>
-                  <Link to="/notfound">학생 제안/민원 처리과정 안내</Link>
-                </li>
-                {/* <li>
-                  <a href="/" />
-                </li> */}
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-              </ul>
-            </div>
-          <nav>
-            <ul>
-              <li className="main_navcom">
-                <Link to="/">
-                  <img
-                    className="logo_image"
-                    alt="gistlogo"
-                    src="https://www.gist.ac.kr/kr/img/sub01/01030301_img21.jpg"
-                  />
-                </Link>
-              </li>
-              <li className="main_navcom">
-                <NavLink to="/petitions" activeStyle={activeStyle}>모든 청원</NavLink>
-              </li>
-              <li className="main_navcom">
-                <NavLink to="/mypage" activeStyle={activeStyle}>나의 청원</NavLink>
-              </li>
-              <li className="main_navcom">
-                <NavLink to="/notfound" exact activeStyle={activeStyle}>건의함 모아보기</NavLink>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+        <link rel="stylesheet" href="./MainHeader.css"></link>        
+
+        <div class="inner">
+          <a href="./">
+            <img src="https://www.gist.ac.kr/kr/img/sub01/01030301_img21.jpg"  class="logo" />
+          </a>
+    
+          <div class="sub_menu">
+            <ul class="menu">
+              <li><a href="./">홈</a></li>
+              <li><a href="javascript:void(0)">학부 담당자</a></li>
+              <li><a href="javascript:void(0)">학생 제안/민원 처리과정 안내</a></li>
+              <li>
+                <a href="javascript:void(0)">
+                  <div class="material-icons">login</div>Login
+                </a>
               </li>
             </ul>
-          </nav>
-
+          </div>
+    
+            
+          <div class="main_menu">
+            <ul class="menu">
+              <li><NavLink to="/notfound1" exact activeStyle={activeStyle}>모든 청원</NavLink></li>
+              <li><NavLink to="/notfound2" exact activeStyle={activeStyle}>나의 청원</NavLink></li>
+              <li><NavLink to="/notfound3" exact activeStyle={activeStyle}>건의함 모아보기</NavLink></li>
+            </ul>
+          </div>
+    
         </div>
       </header>
-    </div>
   );
 };
 

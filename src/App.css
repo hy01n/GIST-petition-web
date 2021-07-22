@@ -1,1 +1,46 @@
+@import url("http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js");
+
 /* global css */
+/* COMMON */
+
+body{
+    color: #333;
+    font-family: "Noto Sans KR","NanumGothic","NanumGothicBold","verdana","gulim","dotum", sans-serif !important;
+    line-height: 1.4;
+    font-size: 16px;
+    height: 6000px;
+  }
+  
+  .inner {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  a {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .btn {
+    width: 240px;
+    padding: 10px;
+    border: 2px solid #fff;
+    background-color: #df3127;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+  }
+  .btn:hover {
+    background-color: #fff;
+    color: #df3127;
+  }

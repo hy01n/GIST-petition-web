@@ -1,0 +1,40 @@
+
+/* VISUAL/ */
+.visual {
+  margin-top: 130px;
+
+  background-color: #464646;
+  background-image: url("assets/images/gist_panorama4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.visual .inner {
+  height: 646px;
+}
+
+.visual .slogan {
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-shadow:  2px 2px 8px rgba(0,0,0, .5);;
+}
+
+.visual .slogan .fade-in {
+  opacity: 0;
+}
+
+.visual .more {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  margin-left: -120px;
+}

@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components';
 const Subject = ({ text, primary }) => {
   return (primary ? <StyledSubject primary>{text}</StyledSubject> : 
     <StyledSubject>{text}</StyledSubject>);
-};
+}
+
 
 const StyledSubject = styled.h4`
   ${(props) =>
@@ -16,3 +17,9 @@ const StyledSubject = styled.h4`
 `;
 
 export default Subject;
+
+const SubjectText = styled.div`
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 500;
+`;
