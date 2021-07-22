@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import PageNumber from 'components/atoms/PageNumber/PageNumber';
+import styled from 'styled-components';
 
 const Pagination = ({
   currentPage,
@@ -16,7 +17,7 @@ const Pagination = ({
   );
 
   return (
-    <div className="PostList__Pagination">
+    <Paging className="PostList__Pagination">
       {pageNumbers.map((num) => (
         <PageNumber
           currentPage={currentPage}
@@ -24,8 +25,13 @@ const Pagination = ({
           setCurrentPage={setCurrentPage}
         />
       ))}
-    </div>
+    </Paging>
   );
 };
+
+const Paging = styled.div`
+  margin: 30px 0 0;
+  text-align: center;
+`;
 
 export default Pagination;
