@@ -3,35 +3,33 @@ import 'pages/PostList/PostList.css';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
-import FilterDropDowns from 'components/molecules/FilterDropDowns/FilterDropDowns';
 import LoadingText from 'components/atoms/LoadingText/LoadingText';
 import Subject from 'components/atoms/Subject/Subject';
 import PostTable from 'components/organisms/PostTable';
+import MainHeader from 'components/hardcording/MainHeader/MainHeader';
+import FilterDropDown from 'components/organisms/FilterDropdown';
+import styled from 'styled-components';
 
 const PostList = () => {
-  const [answered, setAnswered] = useState(false);
+  const [filterInfo, setFilterInfo] = useState({
+    answered: false,
+    order: '최신순',
+    category: '전체',
+  });
+
   const [postList, setPostList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
 
-  const [filterInfo, setFilterInfo] = useState({
-    order: 'LATEST',
-    category: 'ALL',
-  });
-  const handleOption = (e) => {
-    const optionValue = e.target.value;
-    if (e.target.name === 'order') {
-      setFilterInfo({
-        ...filterInfo,
-        order: optionValue,
-      });
-    } else if (e.target.name === 'category') {
-      setFilterInfo({
-        ...filterInfo,
-        category: optionValue,
-      });
-    }
+  const handleAnsweredFilter = (value) => {
+    setFilterInfo({ ...filterInfo, answered: value });
+  };
+
+  const handleDropDownFilter = (type, value) => {
+    const tempFilterInfo = { ...filterInfo };
+    tempFilterInfo[type] = value;
+    setFilterInfo(tempFilterInfo);
   };
 
   const getPost = async () => {
@@ -43,13 +41,9 @@ const PostList = () => {
     setLoading(false);
   };
 
-  const handlePostSearch = () => {
-    getPost();
-  };
-
   useEffect(() => {
     getPost();
-  }, []);
+  }, [filterInfo]);
 
   const currentPosts = useCallback(
     (postlist) => {
@@ -59,20 +53,66 @@ const PostList = () => {
     },
     [currentPage],
   );
+  const DropDownOrderContents = [
+    {
+      id: 1,
+      content: '최신순',
+      onClick: () => setFilterInfo({ ...filterInfo, order: 'LATEST' }),
+    },
+    {
+      id: 2,
+      content: '추천순',
+      onClick: () => setFilterInfo({ ...filterInfo, order: 'RECOMMENDED' }),
+    },
+  ];
+
+  const DropDownCategoryContents = [
+    {
+      id: 1,
+      content: '전체',
+      onClick: () => setFilterInfo({ ...filterInfo, order: 'LATEST' }),
+    },
+    {
+      id: 2,
+      content: '분류1',
+      onClick: () => setFilterInfo({ ...filterInfo, order: 'RECOMMENDED' }),
+    },
+    {
+      id: 3,
+      content: '분류2',
+      onClick: () => setFilterInfo({ ...filterInfo, order: 'RECOMMENDED' }),
+    },
+  ];
+
   return (
     <>
+      <MainHeader />
       {loading ? (
         <LoadingText text="Loading..." />
       ) : (
-        <div className="PostList__Container">
-          <Subject text="모든 청원" />
+        <Container>
+          <Subject text="청원 목록" />
           <div className="PostList__Filter">
-            <FilterAnswer answered={answered} setAnswered={setAnswered} />
-            <FilterDropDowns handleOption={handleOption} />
-
-            <button type="button" onClick={handlePostSearch}>
-              검색
-            </button>
+            <FilterAnswer
+              answered={filterInfo.answered}
+              handleFilter={handleAnsweredFilter}
+            />
+            <FilterDropDownContainer>
+              <FilterDropDown
+                type="order"
+                text={filterInfo.order}
+                contents={DropDownOrderContents}
+                handleFilter={handleDropDownFilter}
+                float="left"
+              />
+              <FilterDropDown
+                type="category"
+                text={filterInfo.category}
+                contents={DropDownCategoryContents}
+                handleFilter={handleDropDownFilter}
+                float="right"
+              />
+            </FilterDropDownContainer>
           </div>
           <div className="PostList__Content">
             <PostTable
@@ -111,10 +151,18 @@ const PostList = () => {
               setCurrentPage={setCurrentPage}
             />
           </div>
-        </div>
+        </Container>
       )}
     </>
   );
 };
 
+const FilterDropDownContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const Container = styled.div`
+  width: 80%;
+`;
 export default PostList;
