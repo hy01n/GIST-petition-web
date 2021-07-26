@@ -4,12 +4,8 @@ import styled, { css } from 'styled-components';
 const Subject = ({ text, primary }) => {
   return (primary ? <StyledSubject primary>{text}</StyledSubject> : 
     <StyledSubject>{text}</StyledSubject>);
+}
 
-import styled from 'styled-components';
-
-const Subject = ({ text }) => {
-  return <SubjectText>{text}</SubjectText>;
-};
 
 const StyledSubject = styled.h4`
   ${(props) =>

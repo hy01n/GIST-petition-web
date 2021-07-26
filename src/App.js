@@ -9,11 +9,10 @@ import PostList from 'pages/PostList/PostList';
 import PostView from 'pages/PostView/PostView';
 import Step from 'pages/Step/Step';
 import MyPage from 'pages/MyPage/MyPage';
-
-import MainHeader from 'components/hardcording/MainHeader/MainHeader';
-
 import ForgetID from 'pages/ForgetID/ForgetID';
 import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
+import MainHeader from 'components/hardcording/MainHeader/MainHeader';
+
 
 
 function App() {

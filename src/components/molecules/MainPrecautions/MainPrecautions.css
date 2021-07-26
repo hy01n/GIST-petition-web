@@ -1,0 +1,119 @@
+
+/* PRECAUTIONS */
+
+.precautions {
+
+}
+.precautions .precautions-line {
+  position: relative;
+}
+
+.precautions .precautions-line .bg-left {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #df3127;
+}
+.precautions .precautions-line .bg-right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #5a5e5d;
+}
+.precautions .precautions-line > .inner {
+  height: 60px;
+  display: flex;
+}
+.precautions .precautions-line .inner .inner__left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.precautions .precautions-line .inner .inner__right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.precautions .precautions-line .inner h2 {
+  font-size: 18px;
+  color: #fff;
+}
+.precautions .precautions-line .inner .material-icons{
+  margin-left: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.precautions .precautions-line .inner .inner__left .material-icons{
+  transition: .3s;
+}
+.precautions .precautions-line .inner .inner__left .material-icons.hide {
+  opacity: 0;
+  cursor: default;
+}
+.precautions .precautions-line .inner .inner__right .material-icons{
+  transition: .3s;
+}
+.precautions .precautions-line .inner .inner__right .material-icons.hide {
+  opacity: 0;
+  cursor: default;
+}
+
+.precautions .precuation__left {
+  height: 221px;
+  background-color: #dd433b;
+  transition: .3s;
+  overflow: hidden;
+}
+.precautions .precuation__left .inner {
+  padding: 25px 0px;
+  display: flex;
+  justify-content: center;
+}
+.precautions .precuation__left ul li{
+  border-bottom: 1px solid #e4e4e4;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.precautions .precuation__left ul li:nth-child(4){
+  border-bottom: none;
+}
+
+.precautions .precuation__left.hide {
+  height: 0;
+}
+
+
+.precautions .precuation__right {
+  height: 221px;
+  background-color: #616463;
+  transition: .3s;
+  overflow: hidden;
+}
+.precautions .precuation__right .inner {
+  padding: 25px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.precautions .precuation__right ul li{
+  border-bottom: 1px solid #e4e4e4;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.precautions .precuation__right ul li:nth-child(4){
+  border-bottom: none;
+}
+
+.precautions .precuation__right.hide {
+  height: 0;
+}
