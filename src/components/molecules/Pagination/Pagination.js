@@ -19,7 +19,7 @@ const Pagination = ({
   return (
     <Paging className="PostList__Pagination">
       {pageNumbers.map((num) => (
-        <PageNumber
+        <PageNumber key={true}
           currentPage={currentPage}
           number={num}
           setCurrentPage={setCurrentPage}

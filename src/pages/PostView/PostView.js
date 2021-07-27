@@ -96,7 +96,7 @@ const PostView = ({ history, match }) => {
       ) : (
         <CommentWrapper>
           {currentPosts(comments).map((comment) => (
-            <CommentInfo>
+            <CommentInfo key={true}>
               <CommentUserId>{comment.id}</CommentUserId>
               <CommentContent>{comment.content}</CommentContent>
             </CommentInfo>

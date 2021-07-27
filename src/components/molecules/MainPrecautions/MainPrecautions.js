@@ -4,40 +4,40 @@ import './MainPrecautions.css';
 
 const MainPrecautions = () => {
   return (
-        <section class="precautions">
+        <section className="precautions">
 
-            <div class="precautions-line">
-            <div class="bg-left"></div>
-            <div class="bg-right"></div>
-            <div class="inner">
-                <div class="inner__left">
+            <div className="precautions-line">
+            <div className="bg-left"></div>
+            <div className="bg-right"></div>
+            <div className="inner">
+                <div className="inner__left">
                 <h2>이런 청원은 삭제·숨김 처리될 수 있습니다</h2>
-                <div class="material-icons toggle-precuation-left">
+                <div className="material-icons toggle-precuation-left">
                     arrow_drop_down_circle
                 </div>
                 </div>
                 
-                <div class="inner__right">
+                <div className="inner__right">
                 <h2>이런 청원은 답변이 어려울 수 있습니다</h2>
-                <div class="material-icons toggle-precuation-right">
+                <div className="material-icons toggle-precuation-right">
                     arrow_drop_down_circle
                 </div>
                 </div>
             </div>
             </div>
 
-            <div class="precuation__left hide">
-            <div class="inner">
+            <div className="precuation__left hide">
+            <div className="inner">
                 <ul>
-                <li>동일한 내용으로 중복 게시된 청원은 최초 1개 청원만 남기고 '숨김'처리 또는 삭제될 수 있습니다.</li>
-                <li>욕설 및 비속어를 사용한 청원은 관리자에 의해 삭제 또는 일부 내용 '숨김' 처리될 수 있습니다.</li>
+                <li>동일한 내용으로 중복 게시된 청원은 최초 1개 청원만 남기고 `&apos`숨김`&apos`처리 또는 삭제될 수 있습니다.</li>
+                <li>욕설 및 비속어를 사용한 청원은 관리자에 의해 삭제 또는 일부 내용 `&apos`숨김`&apos` 처리될 수 있습니다.</li>
                 <li>폭력적, 선정적, 또는 특정 집단에 대한 혐오 표현 등 청소년에게 유해한 내용을 담은 청원은 관리자에 의해 삭제될 수 있습니다.</li>
-                <li>개인정보, 허위사실, 타인의 명예를 훼손하는 내용이 포함된 청원은 관리자에 의해 삭제 또는 일부 내용 '숨김' 처리될 수 있습니다.</li>
+                <li>개인정보, 허위사실, 타인의 명예를 훼손하는 내용이 포함된 청원은 관리자에 의해 삭제 또는 일부 내용 `&apos`숨김`&apos` 처리될 수 있습니다.</li>
                 </ul>
             </div>
             </div>
-            <div class="precuation__right hide">
-            <div class="inner">
+            <div className="precuation__right hide">
+            <div className="inner">
                 <ul>
                 <li>지방자치단체 고유 업무에 해당하는 내용 등 중앙 정부의 역할과 책임 범위를 벗어난 경우 답변이 어려울 수 있습니다.</li>
                 <li>청원 주요 내용이 허위사실로 밝혀진 경우 답변이 어려울 수 있습니다.</li>

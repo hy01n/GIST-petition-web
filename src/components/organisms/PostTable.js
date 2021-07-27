@@ -16,7 +16,7 @@ const PostTableRow = ({ row }) => {
     <>
       <tr>
         {row.map((data) => (
-          <PostTableColumn data={data} />
+          <PostTableColumn key={true} data={data} />
         ))}
       </tr>
     </>
@@ -28,13 +28,13 @@ const PostTable = ({ header, bodys }) => {
       <thead>
         <tr>
           {header.map((data) => (
-            <th>{data}</th>
+            <th key={true}>{data}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {bodys.map((row) => (
-          <PostTableRow row={row} />
+          <PostTableRow key={true} row={row} />
         ))}
       </tbody>
     </table>
