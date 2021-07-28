@@ -96,7 +96,7 @@ const PostView = ({ history, match }) => {
       ) : (
         <CommentWrapper>
           {currentPosts(comments).map((comment) => (
-            <CommentInfo>
+            <CommentInfo key={true}>
               <CommentUserId>{comment.id}</CommentUserId>
               <CommentContent>{comment.content}</CommentContent>
             </CommentInfo>
@@ -118,7 +118,7 @@ const PostView = ({ history, match }) => {
 
 const PostViewWrapper = styled.div`
   width:900px;
-  margin: 30px auto;
+  margin: 130px auto 30px;
   padding: 50px;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;

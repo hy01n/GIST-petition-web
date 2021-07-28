@@ -163,6 +163,7 @@ const FilterDropDownContainer = styled.div`
 `;
 
 const Container = styled.div`
+  margin-top: 130px;
   width: 80%;
 `;
 export default PostList;

@@ -13,8 +13,6 @@ import ForgetID from 'pages/ForgetID/ForgetID';
 import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
 import MainHeader from 'components/hardcording/MainHeader/MainHeader';
 
-
-
 function App() {
   return (
     <Router>

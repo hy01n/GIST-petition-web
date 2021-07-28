@@ -18,8 +18,8 @@ const StyledSubject = styled.h4`
 
 export default Subject;
 
-const SubjectText = styled.div`
-  font-size: 22px;
-  line-height: 40px;
-  font-weight: 500;
-`;
+// const SubjectText = styled.div`
+//   font-size: 22px;
+//   line-height: 40px;
+//   font-weight: 500;
+// `;
