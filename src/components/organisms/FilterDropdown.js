@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 const FilterDropDown = ({ text, type, contents, handleFilter }) => {
   console.log(text);
 
-  console.log(contents);
+  // console.log(contents);
 
   return (
     <DropDownContainer>

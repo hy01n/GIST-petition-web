@@ -7,7 +7,6 @@ import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import Pagination from 'components/molecules/Pagination/Pagination';
 
-
 const PostView = ({ history, match }) => {
   const { id } = match.params;
 
@@ -74,7 +73,7 @@ const PostView = ({ history, match }) => {
           </PostViewRow>
 
           <PostViewRow>
-            <Subject primary text="청원 내용" />
+            <Subject page="postview" text="청원 내용" />
             <PostViewContent>{postDetail.content}</PostViewContent>
           </PostViewRow>
         </>
@@ -117,8 +116,8 @@ const PostView = ({ history, match }) => {
 };
 
 const PostViewWrapper = styled.div`
-  width:900px;
-  margin: 130px auto 30px;
+  width: 900px;
+  margin: 190px auto 30px;
   padding: 50px;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;
@@ -162,16 +161,16 @@ const ApproveCommentButton = styled.button`
   }
 `;
 
-const CommentWrapper = styled.div`
-
-`;
+const CommentWrapper = styled.div``;
 
 const CommentInfo = styled.div`
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
-  padding: 15px 0`;
+  padding: 15px 0;
+`;
 const CommentUserId = styled.h4`
-  margin: 0`;
+  margin: 0;
+`;
 const CommentContent = styled.span``;
 
 const CommentInputWrapper = styled.div`

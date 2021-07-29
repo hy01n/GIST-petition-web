@@ -1,34 +1,28 @@
 import React from 'react';
-import './MainHeader.css';
+import styles from './MainHeader.module.scss';
 import { NavLink } from 'react-router-dom';
-
+import classNames from 'classnames';
 const activeStyle = { color: '#df3127' };
 
 const MainHeader = () => {
   return (
     <header>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link
-        rel="stylesheet"
-        href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
-      />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
       />
       <link rel="stylesheet" href="./MainHeader.css"></link>
 
-      <div className="inner">
+      <div className={classNames('inner', styles['inner'])}>
         <a href="./">
           <img
             src="https://www.gist.ac.kr/kr/img/sub01/01030301_img21.jpg"
-            className="logo"
+            className={styles['logo']}
           />
         </a>
 
-        <div className="sub_menu">
-          <ul className="menu">
+        <div className={styles['sub_menu']}>
+          <ul className={styles['menu']}>
             <li>
               <a href="./">홈</a>
             </li>
@@ -46,8 +40,8 @@ const MainHeader = () => {
           </ul>
         </div>
 
-        <div className="main_menu">
-          <ul className="menu">
+        <div className={styles['main_menu']}>
+          <ul className={styles['menu']}>
             <li>
               <NavLink to="/petitions" exact activeStyle={activeStyle}>
                 모든 청원

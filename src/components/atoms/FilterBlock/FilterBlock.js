@@ -1,31 +1,29 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styles from './FilterBlock.module.scss';
+import classNames from 'classnames';
 
 const FilterBlock = (props) => {
-  console.log(props);
-  const { text, handleClick, buttonStyle } = props;
+  const { text, handleClick, isAnswered } = props;
+  console.log(handleClick);
+
   return (
-    <Block onClick={handleClick} style={buttonStyle}>
-      {text}
-    </Block>
+    <div
+      className={classNames(styles['container'], styles[isAnswered])}
+      onClick={handleClick}
+    >
+      <div className={classNames(styles['item'], styles[isAnswered])}>
+        {text}
+      </div>
+    </div>
   );
 };
 
-// const Li = styled.li`
-//   display: inline;
-//   margin: 0;
-//   text-align: center;
-//   border: 1px solid #7f7f7f;
-// `;
+// const Block = styled.div`
 
-const Block = styled.div`
-  width: 50%;
-  text-align: center;
-  // border: 0;
-  ${(props) =>
-    props.answered &&
-    css`
-      border: 1px solid red;
-    `}
-`;
+//   ${(props) =>
+//     props.answered &&
+//     css`
+//       border: 1px solid red;
+//     `}
+// `;
 export default FilterBlock;

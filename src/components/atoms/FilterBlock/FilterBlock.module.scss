@@ -1,0 +1,32 @@
+$gistRedColor: #df3127;
+
+.container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  .item {
+    font-weight: 700;
+  }
+  .answered {
+    color: $gistRedColor;
+  }
+  .unanswered {
+    color: $gistRedColor;
+  }
+
+  &:hover {
+    color: $gistRedColor;
+    border-bottom: 3px solid $gistRedColor;
+  }
+}
+
+.container.answered {
+  border-bottom: 3px solid $gistRedColor;
+}
+.container.unanswered {
+  border-bottom: 3px solid $gistRedColor;
+}

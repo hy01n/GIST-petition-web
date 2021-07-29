@@ -6,8 +6,13 @@ const Button = ({ ButtonText, onClickButton }) => {
 };
 
 const StyledButton = styled.button`
+  width: 120px;
   color: white;
-  background-color: #02387b;
+  background-color: #df3127;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 `;
 
 export default Button;
