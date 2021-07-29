@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import 'pages/PostList/PostList.css';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
@@ -8,7 +7,7 @@ import Subject from 'components/atoms/Subject/Subject';
 import PostTable from 'components/organisms/PostTable';
 import MainHeader from 'components/hardcording/MainHeader/MainHeader';
 import FilterDropDown from 'components/organisms/FilterDropdown';
-import styled from 'styled-components';
+import styles from './PostList.module.scss';
 
 const PostList = () => {
   const [filterInfo, setFilterInfo] = useState({
@@ -90,80 +89,73 @@ const PostList = () => {
       {loading ? (
         <LoadingText text="Loading..." />
       ) : (
-        <Container>
-          <Subject text="청원 목록" />
-          <div className="PostList__Filter">
-            <FilterAnswer
-              answered={filterInfo.answered}
-              handleFilter={handleAnsweredFilter}
-            />
-            <FilterDropDownContainer>
-              <FilterDropDown
-                type="order"
-                text={filterInfo.order}
-                contents={DropDownOrderContents}
-                handleFilter={handleDropDownFilter}
-                float="left"
+        <section className={styles['post-list']}>
+          <div className="inner">
+            <Subject className={styles['subject']} text="청원 목록" />
+            <div className="filter">
+              <FilterAnswer
+                answered={filterInfo.answered}
+                handleFilter={handleAnsweredFilter}
               />
-              <FilterDropDown
-                type="category"
-                text={filterInfo.category}
-                contents={DropDownCategoryContents}
-                handleFilter={handleDropDownFilter}
-                float="right"
+              <div className={styles['drop-down']}>
+                <FilterDropDown
+                  type="order"
+                  text={filterInfo.order}
+                  contents={DropDownOrderContents}
+                  handleFilter={handleDropDownFilter}
+                  float="left"
+                />
+                <FilterDropDown
+                  type="category"
+                  text={filterInfo.category}
+                  contents={DropDownCategoryContents}
+                  handleFilter={handleDropDownFilter}
+                  float="right"
+                />
+              </div>
+            </div>
+            <div className={styles['contents']}>
+              <PostTable
+                header={['분류', '제목', '청원 날짜', '참여 인원']}
+                bodys={currentPosts(postList).map((post) => [
+                  {
+                    id: 1,
+                    postId: post.id,
+                    header: 'category',
+                    content: '분류1',
+                  },
+                  {
+                    id: 2,
+                    postId: post.id,
+                    header: 'title',
+                    content: post.title,
+                  },
+                  {
+                    id: 3,
+                    postId: post.id,
+                    header: 'date',
+                    content: '2020-10-25',
+                  },
+                  {
+                    id: 4,
+                    postId: post.id,
+                    header: 'count',
+                    content: '15',
+                  },
+                ])}
               />
-            </FilterDropDownContainer>
+              <Pagination
+                currentPage={currentPage}
+                postsPerPage={postsPerPage}
+                totalPosts={postList.length}
+                setCurrentPage={setCurrentPage}
+              />
+            </div>
           </div>
-          <div className="PostList__Content">
-            <PostTable
-              header={['분류', '제목', '청원 날짜', '참여 인원']}
-              bodys={currentPosts(postList).map((post) => [
-                {
-                  id: 1,
-                  postId: post.id,
-                  header: 'category',
-                  content: '분류1',
-                },
-                {
-                  id: 2,
-                  postId: post.id,
-                  header: 'title',
-                  content: post.title,
-                },
-                {
-                  id: 3,
-                  postId: post.id,
-                  header: 'date',
-                  content: '2020-10-25',
-                },
-                {
-                  id: 4,
-                  postId: post.id,
-                  header: 'count',
-                  content: '15',
-                },
-              ])}
-            />
-            <Pagination
-              currentPage={currentPage}
-              postsPerPage={postsPerPage}
-              totalPosts={postList.length}
-              setCurrentPage={setCurrentPage}
-            />
-          </div>
-        </Container>
+        </section>
       )}
     </>
   );
 };
 
-const FilterDropDownContainer = styled.div`
-  display: flex;
-  width: 100%;
-`;
-
-const Container = styled.div`
-  margin-top: 130px;
-  width: 80%;
-`;
 export default PostList;

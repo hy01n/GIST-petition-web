@@ -1,50 +1,52 @@
 import React from 'react';
 import FilterBlock from 'components/atoms/FilterBlock/FilterBlock';
-import styled from 'styled-components';
+import styles from './FilterAnswer.module.scss';
 
 const FilterAnswer = ({ answered, handleFilter }) => {
   return (
-    <FilterBlockWrapper>
+    <div className={styles['filter__answer']}>
       <FilterBlock
         text="답변 대기 중"
         handleClick={() => handleFilter(false)}
-        buttonStyle={
-          !answered
-            ? {
-                color: 'red',
-              }
-            : null
-        }
+        isAnswered={!answered ? 'unanswered' : ''}
       />
       <FilterBlock
         text="답변 완료"
         handleClick={() => handleFilter(true)}
-        buttonStyle={
-          answered
-            ? {
-                color: '#0a1645',
-                borderottomColor: '#0a1645',
-              }
-            : null
-        }
-        borderRight
+        isAnswered={answered ? 'answered' : ''}
       />
-    </FilterBlockWrapper>
+    </div>
   );
 };
 
-const FilterBlockWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  height: 59px;
-  border-bottom: 1px solid #7f7f7f;
-  cursor: pointer;
-  &:hover {
-    border-bottom: 5px solid #0a1645;
-  }
-`;
+// const FilterAnswer = ({ answered, handleFilter }) => {
+//   return (
+//     <div className={styles['filter__answer']}>
+//       <FilterBlock
+//         text="답변 대기 중"
+//         handleClick={() => handleFilter(false)}
+//         buttonStyle={
+//           !answered
+//             ? {
+//                 color: '#df3127',
+//               }
+//             : null
+//         }
+//       />
+//       <FilterBlock
+//         text="답변 완료"
+//         handleClick={() => handleFilter(true)}
+//         buttonStyle={
+//           answered
+//             ? {
+//                 color: '#df3127',
+//               }
+//             : null
+//         }
+//         borderRight
+//       />
+//     </div>
+//   );
+// };
+
 export default FilterAnswer;

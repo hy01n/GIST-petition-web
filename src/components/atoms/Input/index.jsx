@@ -9,6 +9,8 @@ const InputText = ({ value, onChangeValue }) => {
     />
   );
 };
-const StyledInputText = styled.input``;
+const StyledInputText = styled.input`
+  width: 560px;
+`;
 
 export default InputText;

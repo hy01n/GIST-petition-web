@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './PostTable.module.scss';
 
 const PostTableColumn = ({ data }) => {
   return data.header === 'title' ? (
@@ -24,7 +25,7 @@ const PostTableRow = ({ row }) => {
 };
 const PostTable = ({ header, bodys }) => {
   return (
-    <table>
+    <table className={styles['contents__table']}>
       <thead>
         <tr>
           {header.map((data) => (
