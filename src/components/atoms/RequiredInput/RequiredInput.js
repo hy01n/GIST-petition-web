@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const RequiredInput = ({ type, placeholder }) => {
   return <input required type={type} placeholder={placeholder} />;

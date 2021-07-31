@@ -17,6 +17,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "prepare": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,6 +28,12 @@
       "react-app",
       "react-app/jest",
       "prettier"
+    ]
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "git add"
     ]
   },
   "browserslist": {
@@ -44,6 +51,8 @@
   "devDependencies": {
     "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
     "prettier": "^2.3.2"
   }
 }
