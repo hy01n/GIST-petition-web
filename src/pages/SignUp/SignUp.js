@@ -6,14 +6,14 @@
 // }
 
 // export default SignUp;
-import React from "react";
-import "./SignUp.css";
-import InputPair from "components/molecules/InputPair/InputPair";
-import SubmitButton from "components/atoms/SubmitButton/SubmitButton";
-import InternalLink from "components/atoms/InternalLink/InternalLink";
-import LoginInput from "components/atoms/LoginInput/LoginInput";
-import TitleBlock from "components/molecules/TitleBlock/TitleBlock";
-import InputButtonPair from "components/molecules/InputButtonPair/InputButtonPair";
+import React from 'react';
+import './SignUp.css';
+import InputPair from 'components/molecules/InputPair/InputPair';
+import SubmitButton from 'components/atoms/SubmitButton/SubmitButton';
+import InternalLink from 'components/atoms/InternalLink/InternalLink';
+import LoginInput from 'components/atoms/LoginInput/LoginInput';
+import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
+import InputButtonPair from 'components/molecules/InputButtonPair/InputButtonPair';
 
 const SignUp = () => {
   return (
