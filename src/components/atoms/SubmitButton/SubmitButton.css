@@ -1,0 +1,17 @@
+button {
+  border: none;
+  padding: 15px 0px;
+  margin-bottom: 25px;
+  border-color: #ff7878;
+  background-color: #ff7878;
+  cursor: pointer;
+  padding: 20px 0px;
+  border-radius: 5px;
+}
+
+button::text {
+  color: rgba(0, 0, 0, 0.4);
+}
+button:focus {
+  outline: none;
+}

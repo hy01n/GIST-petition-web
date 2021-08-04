@@ -33,7 +33,7 @@ const MainHeader = () => {
               <a href="javascript:void(0)">학생 제안/민원 처리과정 안내</a>
             </li>
             <li>
-              <a href="javascript:void(0)">
+              <a href="./login">
                 <div className="material-icons">login</div>Login
               </a>
             </li>
