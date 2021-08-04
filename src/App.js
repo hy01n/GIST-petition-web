@@ -20,8 +20,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/login" component={Login} />
         <Route exact path="/petitions" component={PostList} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/step" component={Step} />
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/petitions/:id" component={PostView} />
