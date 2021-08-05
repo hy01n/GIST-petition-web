@@ -9,6 +9,7 @@ const InputText = ({ value, onChangeValue }) => {
     />
   );
 };
+
 const StyledInputText = styled.input`
   width: 560px;
 `;

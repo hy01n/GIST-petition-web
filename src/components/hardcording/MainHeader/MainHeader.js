@@ -1,41 +1,36 @@
 import React from 'react';
 import styles from './MainHeader.module.scss';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
-const activeStyle = { color: '#df3127' };
 
 const MainHeader = () => {
+  const activeStyle = { color: '#df3127' };
+
   return (
     <header>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
-      />
-      <link rel="stylesheet" href="./MainHeader.css"></link>
-
       <div className={classNames('inner', styles['inner'])}>
-        <a href="./">
+        <Link to="/">
           <img
             src="https://www.gist.ac.kr/kr/img/sub01/01030301_img21.jpg"
             className={styles['logo']}
           />
-        </a>
+        </Link>
 
         <div className={styles['sub_menu']}>
           <ul className={styles['menu']}>
             <li>
-              <a href="./">홈</a>
+              <Link to="/">홈</Link>
             </li>
             <li>
-              <a href="javascript:void(0)">학부 담당자</a>
+              <Link to="/">학부 담당자</Link>
             </li>
             <li>
-              <a href="javascript:void(0)">학생 제안/민원 처리과정 안내</a>
+              <Link to="/">학생 제안/민원 처리과정 안내</Link>
             </li>
             <li>
-              <a href="./login">
+              <Link to="/login">
                 <div className="material-icons">login</div>Login
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -53,7 +48,7 @@ const MainHeader = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/notfound3" exact activeStyle={activeStyle}>
+              <NavLink to="/notfound" exact activeStyle={activeStyle}>
                 건의함 모아보기
               </NavLink>
             </li>

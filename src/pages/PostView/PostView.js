@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Subject from 'components/atoms/Subject/Subject';
@@ -22,21 +23,25 @@ const PostView = ({ history, match }) => {
 
   const getData = async () => {
     const res = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts/${id}`,
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
     );
+    console.log(res);
     setPostDetail({
       title: res.data.title,
-      content: res.data.body,
-      count: 36,
+      content: res.data.description,
+      count: res.data.accepted,
     });
   };
 
   const getComment = async () => {
     setLoading(true);
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-    const commentInfos = res.data.map((data) => ({
-      id: data.id,
-      content: data.title,
+    const res = await axios.get(
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
+    );
+    console.log(res.data);
+    const commentInfos = res.data.comment.map((comment) => ({
+      id: comment.commentId,
+      content: comment.content,
     }));
 
     setComments(commentInfos);

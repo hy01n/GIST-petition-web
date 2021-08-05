@@ -18,6 +18,7 @@ const MainVisual = () => {
       },
       [],
     );
+
     gsap.to(
       bottom,
       1,

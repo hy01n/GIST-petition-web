@@ -35,7 +35,9 @@ const PostList = () => {
     setLoading(true);
     // 연습용 REST API 사용
     // 선택된 answered, order, category 값 가지고 요청
-    const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    const res = await axios.get(
+      'https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/list',
+    );
     setPostList(res.data);
     setLoading(false);
   };
@@ -46,8 +48,10 @@ const PostList = () => {
 
   const currentPosts = useCallback(
     (postlist) => {
+      console.log(postlist);
       const indexOfLast = currentPage * postsPerPage;
       const indexOfFirst = indexOfLast - postsPerPage;
+
       return postlist.slice(indexOfFirst, indexOfLast);
     },
     [currentPage],
@@ -122,7 +126,7 @@ const PostList = () => {
                     id: 1,
                     postId: post.id,
                     header: 'category',
-                    content: '분류1',
+                    content: post.category,
                   },
                   {
                     id: 2,
@@ -134,13 +138,13 @@ const PostList = () => {
                     id: 3,
                     postId: post.id,
                     header: 'date',
-                    content: '2020-10-25',
+                    content: post.created,
                   },
                   {
                     id: 4,
                     postId: post.id,
                     header: 'count',
-                    content: '15',
+                    content: post.accepted,
                   },
                 ])}
               />
