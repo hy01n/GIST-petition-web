@@ -28,7 +28,7 @@ const MainHeader = () => {
               <Link to="/">학생 제안/민원 처리과정 안내</Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/login">
                 <div className="material-icons">login</div>Login
               </Link>
             </li>

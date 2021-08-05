@@ -1,23 +1,17 @@
-// import React from 'react';
-// import "pages/SignUp/SignUp.css";
-
-// const SignUp = () => {
-//     return <div>SignUp Page</div>;
-// }
-
-// export default SignUp;
 import React from 'react';
+import styled from 'styled-components';
 import './SignUp.css';
 import InputPair from 'components/molecules/InputPair/InputPair';
 import SubmitButton from 'components/atoms/SubmitButton/SubmitButton';
-import InternalLink from 'components/atoms/InternalLink/InternalLink';
-import LoginInput from 'components/atoms/LoginInput/LoginInput';
+// import InternalLink from 'components/atoms/InternalLink/InternalLink';
+// import LoginInput from 'components/atoms/LoginInput/LoginInput';
 import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
-import InputButtonPair from 'components/molecules/InputButtonPair/InputButtonPair';
+// import InputButtonPair from 'components/molecules/InputButtonPair/InputButtonPair';
+// import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
 
 const SignUp = () => {
   return (
-    <div>
+    <Container>
       <TitleBlock text1="지스트 청원 사이트" text2="계정 만들기" />
       <InputPair
         type1="text"
@@ -25,7 +19,7 @@ const SignUp = () => {
         type2="text"
         placeholder2="입학년도"
       />
-      <div>
+      {/* <div className = "selectBox">
         <select name="" id="track">
           <option value="">대학생</option>
           <option value="">대학원생</option>
@@ -40,22 +34,38 @@ const SignUp = () => {
           <option value="">화학</option>
           <option value="">환경공학</option>
         </select>
-      </div>
-      <InputButtonPair type="text" placeholder="ID" text="중복확인" />
-      <LoginInput type="text" text="Email" />
+      </div> */}
+      {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
+      {/* <LoginInput type="text" placeholder="ID"/>
+      <LoginInput type="text" placeholder="Email" /> */}
+      <InputPair
+        type1="text"
+        placeholder1="ID"
+        type2="text"
+        placeholder2="Email"
+      />
       <InputPair
         type1="password"
         placeholder1="Password"
         type2="password"
         placeholder2="Password check"
       />
-      <LoginInput type="checkbox" text="" />
-      지스트 청원 사이트
-      <InternalLink text="가입약관" />에 동의합니다.
-      <LoginInput type="text" />
+      {/* <LoginInput type="checkbox" text="" /> */}
+      {/* 지스트 청원 사이트
+      <InternalLink text="가입약관"/>에 동의합니다. */}
+      {/* <LoginInput type="text" /> */}
       <SubmitButton text="가입하기" />
-    </div>
+    </Container>
   );
 };
-
+const Container = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 30%;
+`;
 export default SignUp;

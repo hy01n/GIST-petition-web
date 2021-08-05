@@ -1,7 +1,6 @@
-import React from "react";
-
+import React from 'react';
+import './LoginInput.css';
 const LoginInput = ({ type, placeholder }) => {
-  return <input type={type} placeholder={placeholder} />;
+  return <input className="LoginInput" type={type} placeholder={placeholder} />;
 };
-
 export default LoginInput;
