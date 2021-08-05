@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Subject from 'components/atoms/Subject/Subject';
@@ -8,6 +9,7 @@ import Button from 'components/atoms/Button';
 import Pagination from 'components/molecules/Pagination/Pagination';
 
 const PostView = ({ history, match }) => {
+  console.log(history);
   const { id } = match.params;
 
   // 청원 글 내용 관련 states

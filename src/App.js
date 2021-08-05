@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import 'App.css';
+import 'App.scss';
 import SignUp from 'pages/SignUp/SignUp';
 import Login from 'pages/Login/Login';
 import NotFound from 'pages/NotFound/NotFound';
@@ -18,15 +18,15 @@ function App() {
     <Router>
       <MainHeader />
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/petitions" component={PostList} />
-        <Route exact path="/step" component={Step} />
-        <Route exact path="/mypage" component={MyPage} />
-        <Route exact path="/petitions/:id" component={PostView} />
-        <Route exact path="/forgetid" component={ForgetID} />
-        <Route exact path="/forgetpwd" component={ForgetPWD} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/login" component={Login} />
+        <Route path="/petitions/:id" component={PostView} />
+        <Route path="/petitions" component={PostList} />
+        <Route path="/step" component={Step} />
+        <Route path="/mypage" component={MyPage} />
+        <Route path="/forgetid" component={ForgetID} />
+        <Route path="/forgetpwd" component={ForgetPWD} />
+        <Route path="/" exact component={Main} />
         <Route component={NotFound} />
       </Switch>
     </Router>

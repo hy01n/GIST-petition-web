@@ -12,7 +12,6 @@ body {
     'gulim', 'dotum', sans-serif !important;
   line-height: 1.4;
   font-size: 16px;
-  height: 6000px;
 }
 
 .inner {
@@ -39,8 +38,8 @@ a {
   box-sizing: border-box;
   display: block;
   transition: 0.4s;
-}
-.btn:hover {
-  background-color: #fff;
-  color: #df3127;
+  &:hover {
+    background-color: #fff;
+    color: #df3127;
+  }
 }
