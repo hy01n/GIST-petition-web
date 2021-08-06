@@ -2,11 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import './ForgetPWD.css';
 import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
-import SubmitButton from 'components/atoms/SubmitButton/SubmitButton';
+import Button from 'components/atoms/Button/index';
 import InternalLink from 'components/atoms/InternalLink/InternalLink';
 import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
 
 const ForgetPWD = () => {
+  const props = {
+    ButtonText: '새로운 비밀번호 보내기',
+    backgroundColor: '#ff7878',
+    color: '#fff',
+    borderRadius: '5px',
+    size: 'large',
+    type: 'submit',
+  };
   return (
     <Container>
       <TitleBlock
@@ -15,7 +23,7 @@ const ForgetPWD = () => {
       />
       <RequiredInput type="text" placeholder="Username" />
       <RequiredInput type="text" placeholder="Email" />
-      <SubmitButton text="새로운 비밀번호 보내기" />
+      <Button {...props} />
       <InternalLink text="로그인하러 가기" href="login" />
     </Container>
   );

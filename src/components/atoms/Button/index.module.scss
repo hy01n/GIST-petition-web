@@ -1,0 +1,40 @@
+button {
+  border: none;
+}
+.petition {
+  width: 240px;
+  border: 2px solid #fff;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  transition: 0.4s;
+  &:hover {
+    background-color: #fff;
+    color: #df3127;
+  }
+}
+
+.drop-down {
+  &:hover {
+    background-color: #7a7e7d;
+  }
+  &:first-child {
+    border-right: 1px solid #aaa;
+  }
+}
+
+.small {
+  font-size: 12px;
+  padding: 0px 5px;
+  width: 40px;
+  height: 40px;
+}
+.medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.large {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 24px;
+}

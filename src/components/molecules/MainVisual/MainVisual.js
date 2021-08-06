@@ -1,12 +1,20 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import './MainVisual.scss';
+import Button from 'components/atoms/Button/index';
 
 const MainVisual = () => {
   let top = useRef(null);
   let bottom = useRef(null);
   const delay = 0.7;
+
+  const props = {
+    isPetitionBtn: 'Yes!!',
+    ButtonText: '청원하기',
+    backgroundColor: '#df3127',
+    color: '#fff',
+    size: 'large',
+  };
 
   useEffect(() => {
     gsap.to(
@@ -43,9 +51,9 @@ const MainVisual = () => {
           </span>
         </div>
         <div className="more">
-          <Link to="/step" className="btn">
+          <Button as="a" href="/step" {...props}>
             청원하기
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

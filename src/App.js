@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import 'App.scss';
 import SignUp from 'pages/SignUp/SignUp';
 import Login from 'pages/Login/Login';
 import NotFound from 'pages/NotFound/NotFound';
@@ -11,12 +10,15 @@ import Step from 'pages/Step/Step';
 import MyPage from 'pages/MyPage/MyPage';
 import ForgetID from 'pages/ForgetID/ForgetID';
 import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
-import MainHeader from 'components/hardcording/MainHeader/MainHeader';
+import Header from 'components/organisms/Header/Header';
+import 'App.scss';
 
 function App() {
   return (
     <Router>
-      <MainHeader />
+      <header>
+        <Header />
+      </header>
       <Switch>
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />

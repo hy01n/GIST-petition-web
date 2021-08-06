@@ -1,0 +1,45 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+.main_menu {
+  .menu {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    li {
+      font-weight: 600;
+      &::before {
+        content: '';
+        width: 1px;
+        height: 18px;
+        background-color: #e5e5e5;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &:nth-child(1):before {
+        display: none;
+      }
+      a {
+        color: #333;
+        margin: 0 15px;
+      }
+      &:hover a {
+        color: #7c7365;
+      }
+      &.small {
+        font-size: 12px;
+      }
+      &.medium {
+        font-size: 18px;
+      }
+      &.large {
+        font-size: 24px;
+      }
+    }
+  }
+}

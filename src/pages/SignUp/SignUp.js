@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import './SignUp.css';
 import InputPair from 'components/molecules/InputPair/InputPair';
-import SubmitButton from 'components/atoms/SubmitButton/SubmitButton';
+import Button from 'components/atoms/Button/index';
 // import InternalLink from 'components/atoms/InternalLink/InternalLink';
 // import LoginInput from 'components/atoms/LoginInput/LoginInput';
 import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
@@ -10,6 +10,14 @@ import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
 // import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
 
 const SignUp = () => {
+  const props = {
+    ButtonText: '가입하기',
+    backgroundColor: '#ff7878',
+    color: '#fff',
+    borderRadius: '5px',
+    size: 'large',
+    type: 'submit',
+  };
   return (
     <Container>
       <TitleBlock text1="지스트 청원 사이트" text2="계정 만들기" />
@@ -54,14 +62,14 @@ const SignUp = () => {
       {/* 지스트 청원 사이트
       <InternalLink text="가입약관"/>에 동의합니다. */}
       {/* <LoginInput type="text" /> */}
-      <SubmitButton text="가입하기" />
+      <Button {...props} />
     </Container>
   );
 };
 const Container = styled.div`
   position: absolute;
   left: 50%;
-  top: 70%;
+  top: 55%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
