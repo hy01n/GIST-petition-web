@@ -1,0 +1,25 @@
+.sub_menu {
+  .menu {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    li {
+      margin-right: 10px;
+      list-style: none;
+      padding-left: 0px;
+      a {
+        color: #333;
+        &:hover {
+          color: #7c7365;
+          .material-icons {
+            margin-right: 5px;
+          }
+        }
+      }
+      &:nth-child(4) a {
+        display: flex;
+      }
+    }
+  }
+}

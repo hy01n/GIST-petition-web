@@ -5,7 +5,6 @@ import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
 import LoadingText from 'components/atoms/LoadingText/LoadingText';
 import Subject from 'components/atoms/Subject/Subject';
 import PostTable from 'components/organisms/PostTable';
-import MainHeader from 'components/hardcording/MainHeader/MainHeader';
 import FilterDropDown from 'components/organisms/FilterDropdown';
 import styles from './PostList.module.scss';
 
@@ -48,7 +47,6 @@ const PostList = () => {
 
   const currentPosts = useCallback(
     (postlist) => {
-      console.log(postlist);
       const indexOfLast = currentPage * postsPerPage;
       const indexOfFirst = indexOfLast - postsPerPage;
 
@@ -89,7 +87,6 @@ const PostList = () => {
 
   return (
     <>
-      <MainHeader />
       {loading ? (
         <LoadingText text="Loading..." />
       ) : (
@@ -103,6 +100,7 @@ const PostList = () => {
               />
               <div className={styles['drop-down']}>
                 <FilterDropDown
+                  classNames={styles['filterDropDwon']}
                   type="order"
                   text={filterInfo.order}
                   contents={DropDownOrderContents}

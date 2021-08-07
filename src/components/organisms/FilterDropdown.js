@@ -1,16 +1,18 @@
 import React from 'react';
-import DropDownButton from 'components/atoms/DropDownButton/DropDownButton';
+import Button from 'components/atoms/Button/index';
 import DropDownContents from 'components/molecules/DropDownContents/DropDownContents';
 import styled, { css } from 'styled-components';
 
 const FilterDropDown = ({ text, type, contents, handleFilter }) => {
-  console.log(text);
-
-  // console.log(contents);
-
+  const btnProps = {
+    isDropDownBtn: 'Yes!!',
+    backgroundColor: '#9a9a9a',
+    size: 'medium',
+    width: '100%',
+  };
   return (
     <DropDownContainer>
-      <DropDownButton text={text} />
+      <Button ButtonText={text} {...btnProps} />
       <DropDownContentsWrapper>
         <DropDownContents
           type={type}
