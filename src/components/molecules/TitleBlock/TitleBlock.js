@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '../../atoms/Title/Title';
-import SubTitle from '../../atoms/SubTitle/SubTitle';
+import Title from 'components/atoms/Title';
+import SubTitle from 'components/atoms/SubTitle';
 
 const TitleBlock = ({ text1, text2 }) => {
   return (

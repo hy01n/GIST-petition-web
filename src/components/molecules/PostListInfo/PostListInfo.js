@@ -1,13 +1,13 @@
 import React from 'react';
-import ListText from 'components/atoms/ListText/ListText';
+import Text from 'components/atoms/Text';
 
 const PostListInfo = () => {
   return (
     <div className="PostList__Content__Info">
-      <ListText text="분류" />
-      <ListText text="제목" />
-      <ListText text="청원 날짜" />
-      <ListText text="참여 인원" />
+      <Text text="분류" />
+      <Text text="제목" />
+      <Text text="청원 날짜" />
+      <Text text="참여 인원" />
     </div>
   );
 };

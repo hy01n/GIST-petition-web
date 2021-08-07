@@ -1,10 +1,10 @@
 import React from 'react';
-import ListText from 'components/atoms/ListText/ListText';
+import Text from 'components/atoms/Text';
 const Comment = ({ userId, content }) => {
   return (
     <Container>
       <UserIdText>{userId}</UserIdText>
-      <ListText text={content} />
+      <Text text={content} />
     </Container>
   );
 };

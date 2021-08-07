@@ -9,7 +9,7 @@ const MainVisual = () => {
   const delay = 0.7;
 
   const props = {
-    isPetitionBtn: 'Yes!!',
+    kinds: 'petition',
     ButtonText: '청원하기',
     backgroundColor: '#df3127',
     color: '#fff',
