@@ -1,15 +1,38 @@
 import axios from 'axios';
-
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Subject from 'components/atoms/Subject/Subject';
-import LoadingText from 'components/atoms/LoadingText/LoadingText';
+import Subject from 'components/atoms/Subject';
+import Text from 'components/atoms/Text';
 import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
+import Card from 'components/atoms/Card';
 import Pagination from 'components/molecules/Pagination/Pagination';
+import Title from 'components/atoms/Title';
 
 const PostView = ({ history, match }) => {
   const { id } = match.params;
+  const acceptBtnProps = {
+    ButtonText: '동의',
+    width: '120px',
+    height: '60px',
+    size: 'large',
+  };
+  const indexBtnProps = {
+    ButtonText: '목록',
+    borderColor: '2px solid #dedede',
+    backgroundColor: '#f3f3f3',
+    color: '#333',
+    width: '120px',
+    size: 'large',
+  };
+  const approveCommentBtnProps = {
+    kinds: 'acpt-comment',
+    ButtonText: '동의 내용 보기',
+    color: '#333',
+    borderColor: '2px solid #dedede',
+    backgroundColor: '#f3f3f3',
+    size: 'large',
+  };
 
   // 청원 글 내용 관련 states
   const [postDetail, setPostDetail] = useState({});
@@ -25,7 +48,7 @@ const PostView = ({ history, match }) => {
     const res = await axios.get(
       `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
     );
-    console.log(res);
+
     setPostDetail({
       title: res.data.title,
       content: res.data.description,
@@ -38,7 +61,7 @@ const PostView = ({ history, match }) => {
     const res = await axios.get(
       `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
     );
-    console.log(res.data);
+
     const commentInfos = res.data.comment.map((comment) => ({
       id: comment.commentId,
       content: comment.content,
@@ -65,11 +88,11 @@ const PostView = ({ history, match }) => {
     [currentPage],
   );
   return (
-    <PostViewWrapper>
+    <Card maxWidth="1100px">
       {postDetail ? (
         <>
           <PostViewRow>
-            <PostViewTitle>{postDetail.title}</PostViewTitle>
+            <Title text={postDetail.title} />
           </PostViewRow>
           <PostViewRow>
             <CountText>
@@ -87,16 +110,24 @@ const PostView = ({ history, match }) => {
       )}
 
       <CommentInputWrapper>
-        <InputText value={commentValue} onChangeValue={setCommentValue} />
+        <InputText
+          value={commentValue}
+          onChangeValue={setCommentValue}
+          kinds="normal-input"
+        />
 
-        <Button ButtonText="동의" onClickButton={() => handleWriteComment()} />
+        <Button
+          onClickButton={() => handleWriteComment()}
+          {...acceptBtnProps}
+        />
       </CommentInputWrapper>
       {loading ? (
-        <LoadingText text="Loading..." />
+        <Text text="Loading..." />
       ) : !comments ? (
-        <ApproveCommentButton onClick={() => getComment()}>
-          동의 내용 보기
-        </ApproveCommentButton>
+        <Button
+          onClick={() => getComment()}
+          {...approveCommentBtnProps}
+        ></Button>
       ) : (
         <CommentWrapper>
           {currentPosts(comments).map((comment) => (
@@ -113,26 +144,19 @@ const PostView = ({ history, match }) => {
           />
         </CommentWrapper>
       )}
-      <GoListButton onClick={() => history.push('/petitions')}>
-        목록
-      </GoListButton>
-    </PostViewWrapper>
+      <Button
+        onClick={() => history.push('/petitions')}
+        {...indexBtnProps}
+      ></Button>
+    </Card>
   );
 };
 
-const PostViewWrapper = styled.div`
-  width: 900px;
-  margin: 190px auto 30px;
-  padding: 50px;
-  box-sizing: border-box;
-  border: 1px solid #d9d9d9;
-  border-radius: 5px;
-`;
 const PostViewRow = styled.div``;
-const PostViewTitle = styled.h2`
-  text-align: center;
-  margin: 0 0 45px;
-`;
+// const PostViewTitle = styled.h2`
+//   text-align: center;
+//   margin: 0 0 45px;
+// `;
 const PostViewContent = styled.div`
   margin: 0 0 50px;
 `;
@@ -146,24 +170,6 @@ const CountText = styled.span`
 
 const Count = styled.span`
   color: #df3127;
-`;
-
-const GoListButton = styled.button``;
-
-const ApproveCommentButton = styled.button`
-  display: block;
-  color: #333;
-  font-size: 14px;
-  font-weight: bold;
-  border: 2px solid #dedede;
-  background-color: #f3f3f3;
-  padding: 15px 30px;
-  width: 100%;
-
-  &:hover {
-    background-color: #df3127;
-    color: white;
-  }
 `;
 
 const CommentWrapper = styled.div``;
@@ -180,8 +186,6 @@ const CommentContent = styled.span``;
 
 const CommentInputWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
-  margin: 0 0 40px;
 `;
 
 export default PostView;

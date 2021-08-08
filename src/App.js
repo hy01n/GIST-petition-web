@@ -11,6 +11,8 @@ import MyPage from 'pages/MyPage/MyPage';
 import ForgetID from 'pages/ForgetID/ForgetID';
 import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
 import Header from 'components/organisms/Header/Header';
+import Footer from 'components/organisms/Footer';
+
 import 'App.scss';
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
         <Route path="/" exact component={Main} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

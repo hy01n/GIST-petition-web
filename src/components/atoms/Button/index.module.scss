@@ -23,6 +23,24 @@ button {
   }
 }
 
+.acpt-comment {
+  &:hover {
+    background-color: #df3127;
+    color: white;
+  }
+}
+
+.page-num {
+  transition: background-color 0.2s ease;
+
+  margin: 0 5px;
+  transition: 0.3s;
+  &:hover {
+    background-color: #2f363c;
+    color: #eaf2f8;
+  }
+}
+
 .small {
   font-size: 12px;
   padding: 0px 5px;

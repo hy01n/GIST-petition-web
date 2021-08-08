@@ -1,7 +1,6 @@
-@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
-@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import 'reset.scss';
 
 /* global css */
 /* COMMON */
@@ -11,7 +10,9 @@ body {
   font-family: 'Noto Sans KR', 'NanumGothic', 'NanumGothicBold', 'verdana',
     'gulim', 'dotum', sans-serif !important;
   line-height: 1.4;
-  font-size: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 header {

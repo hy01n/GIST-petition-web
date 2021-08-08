@@ -11,7 +11,12 @@ const Header = () => {
   const gistColor = '#df3127';
 
   const subMenuLabels = ['홈', '학부 담당자', '학생 제안/민원 처리과정 안내'];
-  const mainMenuLabels = ['모든 청원', '나의 청원', '건의함 모아보기'];
+  const mainMenuLabels = [
+    '청원하기',
+    '모든 청원',
+    '나의 청원',
+    '건의함 모아보기',
+  ];
   const fontSize = 'medium';
 
   return (

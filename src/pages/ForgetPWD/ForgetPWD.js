@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import './ForgetPWD.css';
-import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
-import Button from 'components/atoms/Button/index';
-import InternalLink from 'components/atoms/InternalLink/InternalLink';
-import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
+import InputText from 'components/atoms/Input';
+import Button from 'components/atoms/Button';
+import Card from 'components/atoms/Card';
+import Title from 'components/atoms/Title';
+import './ForgetPWD.module.scss';
+import { Link } from 'react-router-dom';
 
 const ForgetPWD = () => {
   const props = {
@@ -15,28 +15,36 @@ const ForgetPWD = () => {
     size: 'large',
     type: 'submit',
   };
+  const center = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
   return (
-    <Container>
-      <TitleBlock
-        text1="비밀번호를 잊으셨나요?"
-        text2="가입시 등록한 아이디와 이메일주소를 입력해 주세요."
+    <Card>
+      <div style={center}>
+        <Title text="비밀번호를 잊으셨나요?" />
+        <h5>가입시 등록한 아이디와 이메일주소를 입력해 주세요.</h5>
+      </div>
+      <InputText
+        type="text"
+        placeholder="ID"
+        kinds="info-input"
+        isRequired="1"
       />
-      <RequiredInput type="text" placeholder="Username" />
-      <RequiredInput type="text" placeholder="Email" />
+      <InputText
+        type="text"
+        placeholder="Email"
+        kinds="info-input"
+        isRequired="1"
+      />
+
       <Button {...props} />
-      <InternalLink text="로그인하러 가기" href="login" />
-    </Container>
+      <Link style={center} to="login">
+        로그인하러 가기
+      </Link>
+    </Card>
   );
 };
 
-const Container = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 30%;
-`;
 export default ForgetPWD;

@@ -1,11 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import './ForgetID.css';
-import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
-import Button from 'components/atoms/Button/index';
-import InternalLink from 'components/atoms/InternalLink/InternalLink';
-import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
-
+import InputText from 'components/atoms/Input';
+import Button from 'components/atoms/Button';
+import Title from 'components/atoms/Title';
+import Card from 'components/atoms/Card';
+import { Link } from 'react-router-dom';
 const ForgetID = () => {
   const props = {
     ButtonText: '아이디 찾기',
@@ -15,30 +13,32 @@ const ForgetID = () => {
     size: 'large',
     type: 'submit',
   };
-
+  const center = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
   return (
-    <Container>
-      <TitleBlock
-        text1="아이디를 잊으셨나요?"
-        text2="가입시 등록한 이메일주소를 입력해 주세요."
+    <Card>
+      <div style={center}>
+        <Title text="아이디를 잊으셨나요?" />
+        <h5>가입시 등록한 이메일주소를 입력해 주세요.</h5>
+      </div>
+      <InputText
+        type="text"
+        placeholder="Email"
+        isRequired="1"
+        kinds="info-input"
       />
-      <RequiredInput type="text" placeholder="Email" />
       <Button {...props} />
-      <InternalLink text="비밀번호 찾기" href="forgetpwd" />
-      <InternalLink text="로그인하러 가기" href="login" />
-    </Container>
+      <Link style={center} to="forgetpwd">
+        비밀번호 찾기
+      </Link>
+      <Link style={center} to="login">
+        로그인하러 가기
+      </Link>
+    </Card>
   );
 };
-
-const Container = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 30%;
-`;
 
 export default ForgetID;

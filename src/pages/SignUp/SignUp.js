@@ -1,11 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import './SignUp.css';
-import InputPair from 'components/molecules/InputPair/InputPair';
-import Button from 'components/atoms/Button/index';
+import InputText from 'components/atoms/Input';
+import Button from 'components/atoms/Button';
+import Card from 'components/atoms/Card';
 // import InternalLink from 'components/atoms/InternalLink/InternalLink';
 // import LoginInput from 'components/atoms/LoginInput/LoginInput';
-import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
+import Title from 'components/atoms/Title';
+import { Link } from 'react-router-dom';
+
 // import InputButtonPair from 'components/molecules/InputButtonPair/InputButtonPair';
 // import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
 
@@ -18,15 +20,20 @@ const SignUp = () => {
     size: 'large',
     type: 'submit',
   };
+  const center = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
   return (
-    <Container>
-      <TitleBlock text1="지스트 청원 사이트" text2="계정 만들기" />
-      <InputPair
-        type1="text"
-        placeholder1="이름"
-        type2="text"
-        placeholder2="입학년도"
-      />
+    <Card>
+      <div style={center}>
+        <Title text="지스트 청원 사이트" />
+        <h5>계정 만들기</h5>
+      </div>
+      <InputText type="text" placeholder="이름" kinds="info-input" />
+      <InputText type="password" placeholder="입학년도" kinds="info-input" />
       {/* <div className = "selectBox">
         <select name="" id="track">
           <option value="">대학생</option>
@@ -46,34 +53,24 @@ const SignUp = () => {
       {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
       {/* <LoginInput type="text" placeholder="ID"/>
       <LoginInput type="text" placeholder="Email" /> */}
-      <InputPair
-        type1="text"
-        placeholder1="ID"
-        type2="text"
-        placeholder2="Email"
+      <InputText type="text" placeholder="ID" kinds="info-input" />
+      <InputText type="text" placeholder="Email" kinds="info-input" />
+      <InputText type="password" placeholder="Password" kinds="info-input" />
+      <InputText
+        type="password"
+        placeholder="Password check"
+        kinds="info-input"
       />
-      <InputPair
-        type1="password"
-        placeholder1="Password"
-        type2="password"
-        placeholder2="Password check"
-      />
-      {/* <LoginInput type="checkbox" text="" /> */}
-      {/* 지스트 청원 사이트
-      <InternalLink text="가입약관"/>에 동의합니다. */}
+      {/* <LoginInput type="checkbox" text="" />
+      지스트 청원 사이트
+      <InternalLink text="가입약관" />에 동의합니다. */}
       {/* <LoginInput type="text" /> */}
       <Button {...props} />
-    </Container>
+      <Link style={center} to="login">
+        로그인하러 가기
+      </Link>
+    </Card>
   );
 };
-const Container = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 30%;
-`;
+
 export default SignUp;
