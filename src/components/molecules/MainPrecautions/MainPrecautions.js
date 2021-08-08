@@ -83,7 +83,10 @@ const MainPrecautions = ({ collapsed_left, collapsed_right }) => {
             <li>
               부패/예산부당집행&sbquo; 인권침해&sbquo; 성희롱&sbquo;
               괴롭힘&sbquo; 연구관련 부정행위 등의 일반 민원 신고는{' '}
-              <a href="https://www.gist.ac.kr/kr/html/sub10/1004.html">
+              <a
+                href="https://www.gist.ac.kr/kr/html/sub10/1004.html"
+                style={{ color: 'yellow' }}
+              >
                 GIST 공익신고센터
               </a>
               를 이용할 수 있습니다.
