@@ -2,12 +2,11 @@ import React from 'react';
 import MainMenu from 'components/molecules/MainMenu/MainMenu';
 import SubMenu from 'components/molecules/SubMenu/SubMenu';
 import styles from './Header.module.scss';
-
+import logo from 'assets/images/korea_mark.jpg';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 const Header = () => {
-  const gistKrImg = 'https://www.gist.ac.kr/kr/img/sub01/01030301_img21.jpg';
   const gistColor = '#df3127';
 
   const subMenuLabels = ['홈', '학부 담당자', '학생 제안/민원 처리과정 안내'];
@@ -22,7 +21,7 @@ const Header = () => {
   return (
     <div className={classNames('inner', styles['inner'])}>
       <Link to="/">
-        <img src={gistKrImg} className={styles['logo']} />
+        <img src={logo} className={styles['logo']} alt="지스트" />
       </Link>
       <SubMenu labels={subMenuLabels}></SubMenu>
       <MainMenu

@@ -3,7 +3,7 @@ import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import Card from 'components/atoms/Card';
 import Title from 'components/atoms/Title';
-import './ForgetPWD.module.scss';
+import styles from './ForgetPWD.module.scss';
 import { Link } from 'react-router-dom';
 
 const ForgetPWD = () => {
@@ -40,7 +40,7 @@ const ForgetPWD = () => {
       />
 
       <Button {...props} />
-      <Link style={center} to="login">
+      <Link className={styles['link']} style={center} to="login">
         로그인하러 가기
       </Link>
     </Card>

@@ -1,13 +1,42 @@
+import axios from 'axios';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button';
 
-const PostModal = ({ history, setShowConfirmModal }) => {
+const PostModal = ({ setShowConfirmModal, postInfo }) => {
+  const reqBody = postInfo;
+  const postUrl = `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post`;
+  const history = useHistory();
+
+  console.log(JSON.stringify(reqBody));
   const handleComplete = () => {
-    // const res = axios.post('');
-    // 작성된 글 페이지로 이동
-    // history.push(`/petitions/${res.data.id}`);
-    history.push('/petitions/1');
+    axios({
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'post',
+      url: postUrl,
+      data: JSON.stringify(reqBody),
+    })
+      .then(function (res) {
+        console.log(res);
+        history.push(postUrl + `${res.data.id}`);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    // .post(postUrl, reqBody)
+    // .then(function (res) {
+    //   console.log(res);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // })
+    // .then(function (res) {
+    //   console.log(res);
+    //   history.push(postUrl + `${res.data.id}`);
+    // });
   };
   return (
     <ModalWrapper>

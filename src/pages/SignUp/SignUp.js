@@ -1,15 +1,10 @@
 import React from 'react';
-import './SignUp.css';
 import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import Card from 'components/atoms/Card';
-// import InternalLink from 'components/atoms/InternalLink/InternalLink';
-// import LoginInput from 'components/atoms/LoginInput/LoginInput';
 import Title from 'components/atoms/Title';
 import { Link } from 'react-router-dom';
-
-// import InputButtonPair from 'components/molecules/InputButtonPair/InputButtonPair';
-// import RequiredInput from 'components/atoms/RequiredInput/RequiredInput';
+import styles from './SignUp.module.scss';
 
 const SignUp = () => {
   const props = {
@@ -66,7 +61,7 @@ const SignUp = () => {
       <InternalLink text="가입약관" />에 동의합니다. */}
       {/* <LoginInput type="text" /> */}
       <Button {...props} />
-      <Link style={center} to="login">
+      <Link className={styles['link']} style={center} to="login">
         로그인하러 가기
       </Link>
     </Card>

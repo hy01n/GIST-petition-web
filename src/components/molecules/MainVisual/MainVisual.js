@@ -13,7 +13,6 @@ const MainVisual = () => {
     ButtonText: '청원하기',
     backgroundColor: '#df3127',
     color: '#fff',
-    size: 'large',
   };
 
   useEffect(() => {

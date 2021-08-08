@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
-import Pagination from 'components/molecules/Pagination/Pagination';
+import Pagination from 'components/molecules/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
 import Text from 'components/atoms/Text';
-import Subject from 'components/atoms/Subject';
+import Title from 'components/atoms/Title';
 import PostTable from 'components/organisms/PostTable';
 import FilterDropDown from 'components/organisms/FilterDropdown';
 import styles from './PostList.module.scss';
@@ -29,13 +29,17 @@ const PostList = () => {
     tempFilterInfo[type] = value;
     setFilterInfo(tempFilterInfo);
   };
+  let isAnswered = filterInfo.answered.toString();
 
   const getPost = async () => {
     setLoading(true);
     // 연습용 REST API 사용
     // 선택된 answered, order, category 값 가지고 요청
+
+    isAnswered = filterInfo.answered.toString();
+    // console.log(isAnswered);
     const res = await axios.get(
-      'https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/list',
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/list?top=0&size=9&answered=${isAnswered}`,
     );
     setPostList(res.data);
     setLoading(false);
@@ -92,7 +96,7 @@ const PostList = () => {
       ) : (
         <section className={styles['post-list']}>
           <div className="inner">
-            <Subject className={styles['subject']} text="청원 목록" />
+            <Title size="h3" text="청원 목록" />
             <div className="filter">
               <FilterAnswer
                 answered={filterInfo.answered}

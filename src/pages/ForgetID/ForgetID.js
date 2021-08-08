@@ -4,6 +4,8 @@ import Button from 'components/atoms/Button';
 import Title from 'components/atoms/Title';
 import Card from 'components/atoms/Card';
 import { Link } from 'react-router-dom';
+import styles from './ForgetID.module.scss';
+
 const ForgetID = () => {
   const props = {
     ButtonText: '아이디 찾기',
@@ -31,10 +33,10 @@ const ForgetID = () => {
         kinds="info-input"
       />
       <Button {...props} />
-      <Link style={center} to="forgetpwd">
+      <Link className={styles['link']} style={center} to="forgetpwd">
         비밀번호 찾기
       </Link>
-      <Link style={center} to="login">
+      <Link className={styles['link']} style={center} to="login">
         로그인하러 가기
       </Link>
     </Card>

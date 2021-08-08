@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Button from 'components/atoms/Button';
-import styles from './Paging.module.scss';
+import styles from './index.module.scss';
 
 const Pagination = ({
   currentPage,

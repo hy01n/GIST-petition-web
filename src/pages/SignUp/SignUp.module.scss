@@ -3,3 +3,8 @@
   justify-content: center;
   gap: 20px;
 }
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}

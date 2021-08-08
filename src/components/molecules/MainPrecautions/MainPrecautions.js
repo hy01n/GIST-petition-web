@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './MainPrecautions.css';
 // import { Link } from 'react-router-dom';
 
-const MainPrecautions = ({ collapsed_left, collapsed_right }) => {
-  const [isCollapsed_left, setIsCollapsed_left] = useState(collapsed_left);
-  const [isCollapsed_right, setIsCollapsed_right] = useState(collapsed_right);
+const MainPrecautions = () => {
+  const [isCollapsed_left, setIsCollapsed_left] = useState(false);
+  const [isCollapsed_right, setIsCollapsed_right] = useState(false);
   return (
     <section className="precautions">
       <div className="precautions-line">
@@ -12,7 +12,7 @@ const MainPrecautions = ({ collapsed_left, collapsed_right }) => {
         <div className="bg-right"></div>
         <div className="inner">
           <div className="inner__left">
-            <h2>이런 청원은 삭제·숨김 처리될 수 있습니다</h2>
+            <h3>이런 청원은 삭제·숨김 처리될 수 있습니다</h3>
             <div
               className="material-icons toggle-precuation-left"
               onClick={() => {
@@ -27,7 +27,7 @@ const MainPrecautions = ({ collapsed_left, collapsed_right }) => {
           </div>
 
           <div className="inner__right">
-            <h2>이런 청원은 답변이 어려울 수 있습니다</h2>
+            <h3>이런 청원은 답변이 어려울 수 있습니다</h3>
             <div
               className="material-icons toggle-precuation-right"
               onClick={() => {
