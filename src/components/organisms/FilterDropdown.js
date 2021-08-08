@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components';
 
 const FilterDropDown = ({ text, type, contents, handleFilter }) => {
   const btnProps = {
-    isDropDownBtn: 'Yes!!',
+    kinds: 'drop-down',
     backgroundColor: '#9a9a9a',
     size: 'medium',
     width: '100%',

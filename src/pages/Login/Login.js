@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import './Login.css';
-import InputPair from 'components/molecules/InputPair/InputPair';
-import Button from 'components/atoms/Button/index';
-import InternalLink from 'components/atoms/InternalLink/InternalLink';
-import TitleBlock from 'components/molecules/TitleBlock/TitleBlock';
+import InputText from 'components/atoms/Input';
+import Button from 'components/atoms/Button';
+import Card from 'components/atoms/Card';
+import { Link } from 'react-router-dom';
+import Title from 'components/atoms/Title';
 
 const Login = () => {
   const props = {
@@ -15,34 +15,29 @@ const Login = () => {
     size: 'large',
     type: 'submit',
   };
-
+  const center = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
   return (
-    <Container>
-      <TitleBlock text1="지스트 청원 사이트" text2="Login" />
-      <InputPair
-        type1="text"
-        placeholder1="Username"
-        type2="password"
-        placeholder2="Password"
-      />
-      <Button text="로그인" {...props} />
-      <InternalLink text="회원가입" href="/signup" />
-      <div className="forgetIdPwd">
-        <InternalLink text="아이디/" href="forgetid" />
-        <InternalLink text="비밀번호를 잊으셨나요?" href="forgetpwd" />
+    <Card>
+      <div style={center}>
+        <Title text="지스트 청원 사이트" />
+        <h5>Login</h5>
       </div>
-    </Container>
+      <InputText type="text" placeholder="ID" kinds="info-input" />
+      <InputText type="password" placeholder="Password" kinds="info-input" />
+      <Button text="로그인" {...props} />
+      <Link style={center} to="/signup">
+        회원가입
+      </Link>
+      <div className="forgetIdPwd">
+        <Link to="forgetid">아이디/</Link>
+        <Link to="forgetpwd">비밀번호를 잊으셨나요?</Link>
+      </div>
+    </Card>
   );
 };
-const Container = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 30%;
-`;
 
 export default Login;

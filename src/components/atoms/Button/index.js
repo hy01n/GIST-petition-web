@@ -5,16 +5,16 @@ import styles from './index.module.scss';
 import classNames from 'classnames';
 
 const Button = ({ ButtonText, onClickButton, ...props }) => {
-  const petitionBtn = props.isPetitionBtn ? 'petition' : '';
-  const dropDownBtn = props.isDropDownBtn ? 'drop-down' : '';
+  const kinds = props.kinds;
   return (
     <StyledButton
-      className={classNames(
-        styles[petitionBtn],
-        styles[dropDownBtn],
-        styles[props.size],
-      )}
+      className={classNames(styles[kinds], styles[props.size])}
       onClick={onClickButton}
+      style={
+        props.currentPage && props.currentPage === props.number
+          ? { color: 'white', backgroundColor: '#df3127' }
+          : null
+      }
       type={props.type}
       {...props}
     >
@@ -27,14 +27,14 @@ const StyledButton = styled.button`
   cursor: pointer;
   ${(props) =>
     css`
+      border: ${props.borderColor};
       border-radius: ${props.borderRadius};
       background-color: ${props.backgroundColor};
       color: ${props.color};
       width: ${props.width};
+      height: ${props.height};
     `};
 `;
-
-// 너비
 
 Button.propTypes = {
   backgroundColor: PropTypes.string,

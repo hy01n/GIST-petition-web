@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
-import LoadingText from 'components/atoms/LoadingText/LoadingText';
-import Subject from 'components/atoms/Subject/Subject';
+import Text from 'components/atoms/Text';
+import Subject from 'components/atoms/Subject';
 import PostTable from 'components/organisms/PostTable';
 import FilterDropDown from 'components/organisms/FilterDropdown';
 import styles from './PostList.module.scss';
@@ -88,7 +88,7 @@ const PostList = () => {
   return (
     <>
       {loading ? (
-        <LoadingText text="Loading..." />
+        <Text text="Loading..." />
       ) : (
         <section className={styles['post-list']}>
           <div className="inner">
