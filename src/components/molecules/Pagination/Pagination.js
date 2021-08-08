@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import PageNumber from 'components/atoms/PageNumber/PageNumber';
+import Button from 'components/atoms/Button';
 import styles from './Paging.module.scss';
 
 const Pagination = ({
@@ -16,14 +16,24 @@ const Pagination = ({
     [],
   );
 
+  const props = {
+    kinds: 'page-num',
+    color: '#333',
+    borderColor: '1px solid #dedede;',
+    backgroundColor: 'white',
+    size: 'small',
+  };
+
   return (
     <div className={styles['PostList__Pagination']}>
       {pageNumbers.map((num) => (
-        <PageNumber
+        <Button
           key={true}
           currentPage={currentPage}
           number={num}
-          setCurrentPage={setCurrentPage}
+          ButtonText={num}
+          onClickButton={() => setCurrentPage(num)}
+          {...props}
         />
       ))}
     </div>

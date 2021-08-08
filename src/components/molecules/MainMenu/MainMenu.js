@@ -9,18 +9,23 @@ const MainMenu = ({ navLinkColor, labels, fontSize }) => {
     <div className={styles.main_menu}>
       <ul className={styles.menu}>
         <li className={styles[`${fontSize}`]}>
-          <NavLink to="/petitions" exact activeStyle={{ color: navLinkColor }}>
+          <NavLink to="/step" exact activeStyle={{ color: navLinkColor }}>
             {labels[0]}
           </NavLink>
         </li>
         <li className={styles[`${fontSize}`]}>
-          <NavLink to="/mypage" exact activeStyle={{ color: navLinkColor }}>
+          <NavLink to="/petitions" exact activeStyle={{ color: navLinkColor }}>
             {labels[1]}
           </NavLink>
         </li>
         <li className={styles[`${fontSize}`]}>
-          <NavLink to="/notfound" exact activeStyle={{ color: navLinkColor }}>
+          <NavLink to="/mypage" exact activeStyle={{ color: navLinkColor }}>
             {labels[2]}
+          </NavLink>
+        </li>
+        <li className={styles[`${fontSize}`]}>
+          <NavLink to="/notfound" exact activeStyle={{ color: navLinkColor }}>
+            {labels[3]}
           </NavLink>
         </li>
       </ul>
@@ -30,7 +35,7 @@ const MainMenu = ({ navLinkColor, labels, fontSize }) => {
 
 MainMenu.defaultProps = {
   navLinkColor: '#df3127',
-  labels: ['모든 청원', '나의 청원', '건의함 모아보기'],
+  labels: ['청원하기', '모든 청원', '나의 청원', '건의함 모아보기'],
   fontSize: 'medium',
 };
 

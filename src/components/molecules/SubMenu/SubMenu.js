@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const SubMenu = ({ labels }) => {
-  console.log(labels);
   return (
     <div className={styles['sub_menu']}>
       <ul className={styles['menu']}>
