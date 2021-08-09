@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button';
-import Subject from 'components/atoms/Subject';
+import Title from 'components/atoms/Title';
 import Editor from 'components/molecules/Editor';
 import './index.module.scss';
 import InputText from 'components/atoms/Input';
-const PostEditor = ({ setShowConfirmModal }) => {
-  const [postInfo, setPostInfo] = useState({
-    title: '',
-    category: '',
-    content: '',
-  });
-
+const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
   const handleOption = (e) => {
     setPostInfo({ ...postInfo, category: e.target.value });
   };
 
-  const [desc, setDesc] = useState('');
-  const onEditorChange = (value) => {
-    setDesc(value);
+  const onEditorChange = (e) => {
+    setPostInfo({ ...postInfo, description: e });
   };
 
   const history = useHistory();
@@ -27,34 +20,29 @@ const PostEditor = ({ setShowConfirmModal }) => {
   const goBack = (path) => {
     history.push(path);
   };
-
   return (
     <EditorWrapper>
-      <Subject text="제목"></Subject>
+      <Title size="h3" text="제목"></Title>
       <InputText
         type="text"
-        placehorder="청원 제목을 입력해주세요."
+        placeholder="청원 제목을 입력해주세요."
         value={postInfo.title}
+        // post Test를 한 뒤엔 useRef & 컴포넌트간 통신을 이용해서 구현하기
+        titleInput="1"
         onChange={(e) => setPostInfo({ ...postInfo, title: e.target.value })}
         kinds="normal-input"
       />
-      <Subject text="카테고리"></Subject>
-      <select>
-        <option selected disabled onChange={handleOption}>
+      <Title size="h3" text="카테고리"></Title>
+      <select defaultValue="분류1" onChange={handleOption}>
+        <option selected disabled>
           카테고리를 선택해주세요.
         </option>
         <option value="분류1">분류1</option>
         <option value="분류2">분류2</option>
       </select>
-      <Subject text="청원내용"></Subject>
+      <Title size="h3" text="청원내용"></Title>
 
-      {/* <InputContent
-        type="text"
-        value={postInfo.content}
-        onChange={(e) => setPostInfo({ ...postInfo, content: e.target.value })}
-      /> */}
-
-      <Editor value={desc} onChange={onEditorChange} />
+      <Editor placeholder="내용을 작성해주세요." onChange={onEditorChange} />
 
       <ButtonWrapper>
         <Button

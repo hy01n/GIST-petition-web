@@ -40,8 +40,8 @@
   justify-content: center;
   align-items: center;
 }
-.precautions .precautions-line .inner h2 {
-  font-size: 18px;
+.precautions .precautions-line .inner h3 {
+  font-weight: normal;
   color: #fff;
 }
 .precautions .precautions-line .inner .material-icons {

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Text from 'components/atoms/Text';
-import Subject from 'components/atoms/Subject';
 import axios from 'axios';
-import Pagination from 'components/molecules/Pagination/Pagination';
+import Pagination from 'components/molecules/Pagination';
 import PostTable from 'components/organisms/PostTable';
 import styles from './MyPage.module.scss';
+import Title from 'components/atoms/Title';
 
 const MyPage = () => {
   const [loading, setLoading] = useState(false);
@@ -42,7 +42,7 @@ const MyPage = () => {
       ) : (
         <section className={styles['my-post-list']}>
           <div className="inner">
-            <Subject className={styles['subject']} text="내 청원 보기" />
+            <Title size="h3" text="내 청원 보기" />
             <div className={styles['contents']}>
               <PostTable
                 header={['분류', '제목', '청원 날짜', '참여 인원']}

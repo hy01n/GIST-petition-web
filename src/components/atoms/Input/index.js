@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 const InputText = ({ ...props }) => {
   const isRequired = props.isRequired;
-  const onChangeValue = props.onChangeValue
-    ? (e) => props.onChangeValue(e.target.value)
-    : false;
-
   const kinds = props.kinds;
+
+  const onChangeValue = props.titleInput
+    ? props.onChange
+    : (e) => props.onChangeValue(e.target.value);
 
   return (
     <StyledInputText

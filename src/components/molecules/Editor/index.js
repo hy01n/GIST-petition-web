@@ -38,15 +38,15 @@ const Editor = (props) => {
     'background',
   ];
 
-  const { value, onChange } = props;
+  const { placeholder, onChange } = props;
   return (
     <div style={{ height: '650px' }}>
       <ReactQuill
         style={{ height: '600px' }}
+        placeholder={placeholder}
         theme="snow"
         modules={modules}
         formats={formats}
-        value={value || ''}
         onChange={(content, delta, source, editor) =>
           onChange(editor.getHTML())
         }

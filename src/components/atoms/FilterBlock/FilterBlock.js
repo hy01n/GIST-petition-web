@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 const FilterBlock = (props) => {
   const { text, handleClick, isAnswered } = props;
-  console.log(handleClick);
 
   return (
     <div

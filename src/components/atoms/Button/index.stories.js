@@ -14,7 +14,6 @@ Main.args = {
   ButtonText: '청원하기',
   backgroundColor: '#df3127',
   color: '#fff',
-  size: 'large',
 };
 
 export const login = Template.bind({});

@@ -1,10 +1,10 @@
 import React from 'react';
-import './Login.css';
 import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import Card from 'components/atoms/Card';
 import { Link } from 'react-router-dom';
 import Title from 'components/atoms/Title';
+import styles from './Login.module.scss';
 
 const Login = () => {
   const props = {
@@ -29,12 +29,17 @@ const Login = () => {
       <InputText type="text" placeholder="ID" kinds="info-input" />
       <InputText type="password" placeholder="Password" kinds="info-input" />
       <Button text="로그인" {...props} />
-      <Link style={center} to="/signup">
+      <Link className={styles['link']} style={center} to="/signup">
         회원가입
       </Link>
-      <div className="forgetIdPwd">
-        <Link to="forgetid">아이디/</Link>
-        <Link to="forgetpwd">비밀번호를 잊으셨나요?</Link>
+      <div className={styles['forgetIdPwd']}>
+        <Link className={styles['link']} to="forgetid">
+          아이디
+        </Link>
+        <span>/</span>
+        <Link className={styles['link']} to="forgetpwd">
+          비밀번호를 잊으셨나요?
+        </Link>
       </div>
     </Card>
   );

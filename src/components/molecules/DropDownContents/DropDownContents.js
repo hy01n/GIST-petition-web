@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import DropDownContent from 'components/atoms/DropDownContent/DropDownContent';
 
 const DropDownContents = ({ contents, type, handleFilter }) => {
-  console.log(contents);
   return (
     <ContentsWrapper>
       {contents.map((data) => (

@@ -8,19 +8,19 @@ const Text = ({ ...props }) => {
 
 const StyledText = styled.span`
   ${(props) => css`
-    color: {
-      ${props.color};
-    }
+    color: ${props.color};
+    font-size: ${props.fontSize};
   `}
 `;
 
 Text.propTypes = {
   color: PropTypes.string,
   text: PropTypes.string,
+  fontSize: PropTypes.string,
 };
 
 Text.defaultProps = {
-  color: '#fff',
+  color: '#333',
 };
 
 export default Text;

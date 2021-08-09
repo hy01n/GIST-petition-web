@@ -1,4 +1,5 @@
-import Subject from 'components/atoms/Subject';
+import Boundary from 'components/atoms/Boundary';
+import Title from 'components/atoms/Title';
 import React from 'react';
 import './index.css';
 
@@ -6,7 +7,7 @@ const Precuation = () => {
   return (
     <div className="Container">
       <div>
-        <Subject text="GIST 청원, 이렇게 등록하세요"></Subject>
+        <Title size="h3" text="GIST 청원, 이렇게 등록하세요"></Title>
         <div>
           <ul>
             <li>
@@ -55,8 +56,9 @@ const Precuation = () => {
           </ul>
         </div>
       </div>
+      <Boundary style={{ margin: '15px 10px 25px' }} />
       <div>
-        <Subject text="GIST 청원 게시판 운영 원칙"></Subject>
+        <Title size="h3" text="GIST 청원 게시판 운영 원칙"></Title>
         <ul>
           <li>
             <strong>1)</strong> 타인의 권리를 침해하거나 명예를 훼손하는 내용은

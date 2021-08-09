@@ -6,13 +6,27 @@ import PostModal from 'components/organisms/PostModal';
 
 const Step = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [postInfo, setPostInfo] = useState({
+    user_id: 555,
+    title: '',
+    description: '',
+    category: '분류1',
+  });
+
   return (
     <Card maxWidth="900px">
       {showConfirmModal && (
-        <PostModal setShowConfirmModal={setShowConfirmModal} />
+        <PostModal
+          setShowConfirmModal={setShowConfirmModal}
+          postInfo={postInfo}
+        />
       )}
       <Precuation />
-      <PostEditor setShowConfirmModal={setShowConfirmModal} />
+      <PostEditor
+        setShowConfirmModal={setShowConfirmModal}
+        postInfo={postInfo}
+        setPostInfo={setPostInfo}
+      />
     </Card>
   );
 };
