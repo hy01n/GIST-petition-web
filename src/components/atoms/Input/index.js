@@ -6,15 +6,15 @@ const InputText = ({ ...props }) => {
   const isRequired = props.isRequired;
   const kinds = props.kinds;
 
-  const onChangeValue = props.titleInput
-    ? props.onChange
-    : (e) => props.onChangeValue(e.target.value);
+  // const onChangeValue = props.titleInput
+  //   ? props.onChange
+  //   : (e) => props.onChangeValue(e.target.value);
 
   return (
     <StyledInputText
       required={isRequired && true}
       value={props.value}
-      onChange={onChangeValue}
+      // onChange={onChangeValue}
       className={styles[kinds]}
       type={props.type}
       placeholder={props.placeholder}
