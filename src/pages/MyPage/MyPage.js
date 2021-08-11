@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Text from 'components/atoms/Text';
+import Loading from 'components/atoms/Loading/Loading';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination';
 import PostTable from 'components/organisms/PostTable';
@@ -38,7 +38,9 @@ const MyPage = () => {
   return (
     <>
       {loading ? (
-        <Text text="Loading..." />
+        <div className={styles['loading']}>
+          <Loading />
+        </div>
       ) : (
         <section className={styles['my-post-list']}>
           <div className="inner">

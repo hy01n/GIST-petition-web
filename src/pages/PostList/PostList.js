@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
-import Text from 'components/atoms/Text';
+import Loading from 'components/atoms/Loading/Loading';
 import Title from 'components/atoms/Title';
 import PostTable from 'components/organisms/PostTable';
 import FilterDropDown from 'components/organisms/FilterDropdown';
@@ -92,7 +92,9 @@ const PostList = () => {
   return (
     <>
       {loading ? (
-        <Text text="Loading..." />
+        <div className={styles['loading']}>
+          <Loading />
+        </div>
       ) : (
         <section className={styles['post-list']}>
           <div className="inner">
