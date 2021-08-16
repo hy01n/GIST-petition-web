@@ -25,7 +25,7 @@ const CommentList = ({ ...props }) => {
   const getComment = async () => {
     setLoading(true);
     const res = await axios.get(
-      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}/commnet`,
     );
 
     const commentInfos = res.data.comment.map((comment) => ({
@@ -59,7 +59,7 @@ const CommentList = ({ ...props }) => {
       ) : (
         <div>
           {currentPosts(comments).map((comment) => (
-            <CommentInfo key={true}>
+            <CommentInfo key={comment}>
               <Title size="h4" text={comment.id}></Title>
               <Text text={comment.content}></Text>
             </CommentInfo>

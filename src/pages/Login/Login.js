@@ -15,11 +15,13 @@ const Login = () => {
     size: 'large',
     type: 'submit',
   };
+
   const center = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   };
+
   return (
     <Card>
       <div style={center}>

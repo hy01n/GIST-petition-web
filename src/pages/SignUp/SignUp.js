@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
 import Card from 'components/atoms/Card';
@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import styles from './SignUp.module.scss';
 
 const SignUp = () => {
+  const [signValue, setSignValue] = useState('id');
+
   const props = {
     ButtonText: '가입하기',
     backgroundColor: '#ff7878',
@@ -48,7 +50,13 @@ const SignUp = () => {
       {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
       {/* <LoginInput type="text" placeholder="ID"/>
       <LoginInput type="text" placeholder="Email" /> */}
-      <InputText type="text" placeholder="ID" kinds="info-input" />
+      <InputText
+        type="text"
+        placeholder="ID"
+        kinds="info-input"
+        value={signValue}
+        onChangeValue={setSignValue}
+      />
       <InputText type="text" placeholder="Email" kinds="info-input" />
       <InputText type="password" placeholder="Password" kinds="info-input" />
       <InputText

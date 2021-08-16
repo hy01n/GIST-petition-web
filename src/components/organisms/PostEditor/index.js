@@ -12,6 +12,7 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
   };
 
   const onEditorChange = (e) => {
+    console.log(e);
     setPostInfo({ ...postInfo, description: e });
   };
 
