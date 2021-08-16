@@ -85,7 +85,7 @@ const MainPrecautions = () => {
               괴롭힘&sbquo; 연구관련 부정행위 등의 일반 민원 신고는{' '}
               <a
                 href="https://www.gist.ac.kr/kr/html/sub10/1004.html"
-                style={{ color: 'yellow' }}
+                style={{ color: '#fdfd96' }}
               >
                 GIST 공익신고센터
               </a>

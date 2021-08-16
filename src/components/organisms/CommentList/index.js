@@ -25,12 +25,14 @@ const CommentList = ({ ...props }) => {
   const getComment = async () => {
     setLoading(true);
     const res = await axios.get(
-      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}/commnet`,
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}/comment`,
     );
 
-    const commentInfos = res.data.comment.map((comment) => ({
-      id: comment.commentId,
-      content: comment.content,
+    console.log(res.data);
+
+    const commentInfos = res.data.map((key) => ({
+      id: key.commentId,
+      content: key.content,
     }));
 
     setComments(commentInfos);
@@ -41,7 +43,7 @@ const CommentList = ({ ...props }) => {
     (postlist) => {
       const indexOfLast = currentPage * postsPerPage;
       const indexOfFirst = indexOfLast - postsPerPage;
-      return postlist.slice(indexOfFirst, indexOfLast);
+      return postlist.slice(indexOfFirst, indexOfLast).reverse();
     },
     [currentPage],
   );

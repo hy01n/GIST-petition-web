@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './index.module.scss';
 import styled from 'styled-components';
-
 const InputText = ({ ...props }) => {
   const onChangeValue = props.titleInput
     ? props.onChange
     : (e) => props.onChangeValue(e.target.value);
   console.log(props.value);
-
   return (
     <StyledInputText
       required={props.isRequired && true}
@@ -19,11 +17,9 @@ const InputText = ({ ...props }) => {
     />
   );
 };
-
 const StyledInputText = styled.input`
   &:focus {
     outline: none;
   }
 `;
-
 export default InputText;

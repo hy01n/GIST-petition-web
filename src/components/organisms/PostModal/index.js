@@ -41,7 +41,7 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
   return (
     <ModalWrapper>
       <div>
-        <StyledImg src="https://www1.president.go.kr/storage/images/2021/07/TQFXCFCGLH162605856318221.jpg" />
+        <StyledImg src="img/stepModalPrecaution.png" />
       </div>
       <div>
         <table width="100%">
