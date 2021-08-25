@@ -48,7 +48,7 @@ const Editor = (props) => {
         modules={modules}
         formats={formats}
         onChange={(content, delta, source, editor) =>
-          onChange(editor.getHTML())
+          onChange(editor.getText())
         }
       />
     </div>

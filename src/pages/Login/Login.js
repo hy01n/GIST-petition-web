@@ -17,6 +17,7 @@ const Login = () => {
     size: 'large',
     type: 'submit',
   };
+
   const center = {
     display: 'flex',
     flexDirection: 'column',
@@ -47,8 +48,18 @@ const Login = () => {
         <Title text="지스트 청원 사이트" />
         <h5>Login</h5>
       </div>
-      <InputText type="text" placeholder="아이디" kinds="info-input" name="userId"/>
-      <InputText type="password" placeholder="비밀번호" kinds="info-input" name="userPassword"/>
+      <InputText
+        type="text"
+        placeholder="아이디"
+        kinds="info-input"
+        name="userId"
+      />
+      <InputText
+        type="password"
+        placeholder="비밀번호"
+        kinds="info-input"
+        name="userPassword"
+      />
       <Button text="로그인" type="submit" {...props} />
       <Link className={styles['link']} style={center} to="/signup">
         회원가입

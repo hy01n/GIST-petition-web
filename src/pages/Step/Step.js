@@ -7,7 +7,7 @@ import PostModal from 'components/organisms/PostModal';
 const Step = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [postInfo, setPostInfo] = useState({
-    user_id: 555,
+    user_id: 1,
     title: '',
     description: '',
     category: '분류1',

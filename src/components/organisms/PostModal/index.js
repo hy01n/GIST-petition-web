@@ -21,7 +21,7 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
     })
       .then(function (res) {
         console.log(res);
-        history.push(postUrl + `${res.data.id}`);
+        history.push('petitions/27');
       })
       .catch(function (error) {
         console.log(error);

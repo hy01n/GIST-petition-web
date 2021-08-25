@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, {useState} from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import InputText from 'components/atoms/Input';
 import Button from 'components/atoms/Button';
@@ -12,6 +12,8 @@ import styles from './SignUp.module.scss';
 // const usernameInput = document.querySelector("input[placeholder=이름]");
 // const userEmailInput = document.querySelector("input[placeholder=Email]");
 const SignUp = () => {
+  // const [signValue, setSignValue] = useState('id');
+
   const props = {
     ButtonText: '가입하기',
     backgroundColor: '#ff7878',
@@ -37,12 +39,15 @@ const SignUp = () => {
     // const username = usernameInput.value;
     // const email = userEmailInput.value;
     axios
-      .post(`https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/user`, {
-        userId:idValue,
-        userPassword:passwordValue,
-        username:nameValue,
-        email:emailValue
-      })
+      .post(
+        `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/user`,
+        {
+          userId: idValue,
+          userPassword: passwordValue,
+          username: nameValue,
+          email: emailValue,
+        },
+      )
       .then((res) => {
         alert(`${res.status}: 회원가입 성공`);
         history.push('/login'); // eslint-disable-line no-alert
@@ -52,16 +57,22 @@ const SignUp = () => {
       });
   };
 
-
   return (
     <Card>
       <div style={center}>
         <Title text="지스트 청원 사이트" />
         <h5>계정 만들기</h5>
       </div>
-      <InputText type="text" placeholder="이름" kinds="info-input" name="username" value={nameValue} onChangeValue={setNameValue}/>
-        {/* <InputText type="password" placeholder="입학년도" kinds="info-input" /> */}
-        {/* <div className = "selectBox">
+      <InputText
+        type="text"
+        placeholder="이름"
+        kinds="info-input"
+        name="username"
+        value={nameValue}
+        onChangeValue={setNameValue}
+      />
+      {/* <InputText type="password" placeholder="입학년도" kinds="info-input" /> */}
+      {/* <div className = "selectBox">
           <select name="" id="track">
             <option value="">대학생</option>
             <option value="">대학원생</option>
@@ -77,24 +88,42 @@ const SignUp = () => {
             <option value="">환경공학</option>
           </select>
         </div> */}
-        {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
-        {/* <LoginInput type="text" placeholder="ID"/>
+      {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
+      {/* <LoginInput type="text" placeholder="ID"/>
         <LoginInput type="text" placeholder="Email" /> */}
-      <InputText type="text" placeholder="ID" kinds="info-input" name="userId" value={idValue}
-        onChangeValue={setIdValue}/>
-      <InputText type="text" placeholder="Email" kinds="info-input" name="email" value={emailValue}
-        onChangeValue={setEmailValue}/>
-      <InputText type="password" placeholder="Password" kinds="info-input" name="password" value={passwordValue}
-        onChangeValue={setPasswordValue}/>
-        {/* <InputText
+      <InputText
+        type="text"
+        placeholder="ID"
+        kinds="info-input"
+        name="userId"
+        value={idValue}
+        onChangeValue={setIdValue}
+      />
+      <InputText
+        type="text"
+        placeholder="Email"
+        kinds="info-input"
+        name="email"
+        value={emailValue}
+        onChangeValue={setEmailValue}
+      />
+      <InputText
+        type="password"
+        placeholder="Password"
+        kinds="info-input"
+        name="password"
+        value={passwordValue}
+        onChangeValue={setPasswordValue}
+      />
+      {/* <InputText
           type="password"
           placeholder="Password check"
           kinds="info-input"
         /> */}
-        {/* <LoginInput type="checkbox" text="" />
+      {/* <LoginInput type="checkbox" text="" />
         지스트 청원 사이트
         <InternalLink text="가입약관" />에 동의합니다. */}
-        {/* <LoginInput type="text" /> */}
+      {/* <LoginInput type="text" /> */}
       <Button {...props} onClickButton={() => handleSubmit()} type="submit" />
       <Link className={styles['link']} style={center} to="login">
         로그인하러 가기

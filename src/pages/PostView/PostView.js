@@ -20,7 +20,7 @@ const PostView = ({ history, match }) => {
   return (
     <Card maxWidth="900px">
       <Contents id={id} />
-      <CommentInput />
+      <CommentInput id={id} />
       <CommentList id={id} />
 
       <Button

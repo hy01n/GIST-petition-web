@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './PostTable.module.scss';
 
 const PostTableColumn = ({ data }) => {
+  console.log(data);
   return data.header === 'title' ? (
     <Link to={`/petitions/${data.postId}`}>
       <td>{data.content}</td>
