@@ -9,8 +9,6 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
   const postUrl = `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post`;
   const history = useHistory();
 
-  console.log(JSON.stringify(reqBody));
-
   const handleComplete = () => {
     axios({
       headers: {
@@ -21,8 +19,8 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
       data: JSON.stringify(reqBody),
     })
       .then(function (res) {
-        console.log(res);
-        history.push(`petitions/7`);
+        // 지금 작성 완료한 글로 이동합니다.
+        history.push(`petitions/${res.data}`);
       })
       .catch(function (error) {
         console.log(error);

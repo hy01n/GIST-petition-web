@@ -15,9 +15,13 @@ const MyPage = () => {
   const getPost = async () => {
     setLoading(true);
 
-    // 연습용 REST API 사용
+    // userId를 가지고 오는 방법을 생각해봐야 합니다.
+    const userId = '1';
+
     // 로그인 된 유저 토큰? 가지고 요청
-    const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    const res = await axios.get(
+      `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/user/${userId}/post`,
+    );
     setPostList(res.data);
     setLoading(false);
   };
@@ -53,7 +57,7 @@ const MyPage = () => {
                     id: 1,
                     postId: post.id,
                     header: 'category',
-                    content: '분류1',
+                    content: post.category,
                   },
                   {
                     id: 2,
@@ -65,13 +69,13 @@ const MyPage = () => {
                     id: 3,
                     postId: post.id,
                     header: 'date',
-                    content: '2020-10-25',
+                    content: post.created,
                   },
                   {
                     id: 4,
                     postId: post.id,
                     header: 'count',
-                    content: '15',
+                    content: post.accepted,
                   },
                 ])}
               />

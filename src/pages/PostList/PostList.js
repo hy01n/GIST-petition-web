@@ -161,7 +161,7 @@ const PostList = () => {
         }),
     },
     {
-      id: 9,
+      id: 10,
       content: '권익소통',
       onClick: () =>
         setFilterInfo({

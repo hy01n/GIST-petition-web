@@ -11,13 +11,10 @@ const Contents = ({ ...props }) => {
   const [postDetail, setPostDetail] = useState({});
 
   // 댓글 관련 states
-
   const getData = async () => {
     const res = await axios.get(
       `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
     );
-
-    console.log(res);
 
     setPostDetail({
       title: res.data.title,
