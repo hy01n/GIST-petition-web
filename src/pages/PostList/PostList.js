@@ -82,22 +82,92 @@ const PostList = () => {
     },
     {
       id: 2,
-      content: '분류1',
+      content: '기숙사(대학/대학원)',
       onClick: () =>
         setFilterInfo({
           ...filterInfo,
           order: 'RECOMMENDED',
-          category: '분류1',
+          category: '기숙사(대학/대학원)',
         }),
     },
     {
       id: 3,
-      content: '분류2',
+      content: '시설운영',
       onClick: () =>
         setFilterInfo({
           ...filterInfo,
           order: 'RECOMMENDED',
-          category: '분류2',
+          category: '시설운영',
+        }),
+    },
+    {
+      id: 4,
+      content: '진로/취업',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '진로/취업',
+        }),
+    },
+    {
+      id: 5,
+      content: '시설운영',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '시설운영',
+        }),
+    },
+    {
+      id: 6,
+      content: '학적/교과/장학',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '학적/교과/장학',
+        }),
+    },
+    {
+      id: 7,
+      content: '학생지원/행사/동아리',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '학생지원/행사/동아리',
+        }),
+    },
+    {
+      id: 8,
+      content: '기획/예산/홍보',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '기획/예산/홍보',
+        }),
+    },
+    {
+      id: 9,
+      content: '대외협력',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '대외협력',
+        }),
+    },
+    {
+      id: 9,
+      content: '권익소통',
+      onClick: () =>
+        setFilterInfo({
+          ...filterInfo,
+          order: 'RECOMMENDED',
+          category: '권익소통',
         }),
     },
   ];

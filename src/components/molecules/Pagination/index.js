@@ -8,11 +8,6 @@ const Pagination = ({
   totalPosts,
   setCurrentPage,
 }) => {
-  //  console.log(currentPage, postsPerPage, totalPosts);
-  //  console.log(setCurrentPage);
-
-  //  console.log([...Array(Math.ceil(56 / postsPerPage)).keys()]);
-
   const pageNumbers = useMemo(
     () =>
       [...Array(Math.ceil(totalPosts / postsPerPage)).keys()].map(
@@ -20,8 +15,6 @@ const Pagination = ({
       ),
     [],
   );
-
-  //  console.log(pageNumbers);
 
   const props = {
     kinds: 'page-num',

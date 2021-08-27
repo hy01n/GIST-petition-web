@@ -17,6 +17,8 @@ const Contents = ({ ...props }) => {
       `https://gist-competition-cn-server-zvxvr4r3aa-du.a.run.app/gistps/api/v1/post/${id}`,
     );
 
+    console.log(res);
+
     setPostDetail({
       title: res.data.title,
       content: res.data.description,

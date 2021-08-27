@@ -24,6 +24,7 @@ const PostTableRow = ({ row }) => {
     </>
   );
 };
+
 const PostTable = ({ header, bodys }) => {
   return (
     <table className={styles['contents__table']}>

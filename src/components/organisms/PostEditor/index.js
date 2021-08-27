@@ -6,6 +6,7 @@ import Title from 'components/atoms/Title';
 import Editor from 'components/molecules/Editor';
 import './index.module.scss';
 import InputText from 'components/atoms/Input';
+
 const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
   const handleOption = (e) => {
     setPostInfo({ ...postInfo, category: e.target.value });
@@ -34,12 +35,18 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
         kinds="normal-input"
       />
       <Title size="h3" text="카테고리"></Title>
-      <select defaultValue="분류1" onChange={handleOption}>
+      <select defaultValue="기숙사(대학/대학원)" onChange={handleOption}>
         <option selected disabled>
           카테고리를 선택해주세요.
         </option>
-        <option value="분류1">분류1</option>
-        <option value="분류2">분류2</option>
+        <option value="기숙사(대학/대학원)">기숙사(대학/대학원)</option>
+        <option value="시설운영">시설운영</option>
+        <option value="진로/취업">진로/취업</option>
+        <option value="학적/교과/장학">학적/교과/장학</option>
+        <option value="학생지원/행사/동아리">학생지원/행사/동아리</option>
+        <option value="기획/예산/홍보">기획/예산/홍보</option>
+        <option value="대외협력">대외협력</option>
+        <option value="권익소통">권익소통</option>
       </select>
       <Title size="h3" text="청원내용"></Title>
 

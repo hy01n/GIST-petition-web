@@ -43,7 +43,7 @@ const CommentList = ({ ...props }) => {
     (postlist) => {
       const indexOfLast = currentPage * postsPerPage;
       const indexOfFirst = indexOfLast - postsPerPage;
-      return postlist.slice(indexOfFirst, indexOfLast).reverse();
+      return postlist.slice(indexOfFirst, indexOfLast);
     },
     [currentPage],
   );
