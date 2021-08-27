@@ -8,8 +8,8 @@ export default {
 
 const Template = (args) => <PostEditor {...args} />;
 
-export const PostEditor = Template.bind({});
-PostEditor.args = {
+export const PostEditor_ = Template.bind({});
+PostEditor_.args = {
   isPetitionBtn: true,
   ButtonText: '청원하기',
   backgroundColor: '#df3127',

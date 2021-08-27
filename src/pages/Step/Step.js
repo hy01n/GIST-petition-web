@@ -12,7 +12,7 @@ const Step = () => {
     description: '',
     category: '분류1',
   });
-
+  console.log(postInfo.description);
   return (
     <Card maxWidth="900px">
       {showConfirmModal && (

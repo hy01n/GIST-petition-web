@@ -10,6 +10,7 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
   const history = useHistory();
 
   console.log(JSON.stringify(reqBody));
+
   const handleComplete = () => {
     axios({
       headers: {
@@ -21,23 +22,13 @@ const PostModal = ({ setShowConfirmModal, postInfo }) => {
     })
       .then(function (res) {
         console.log(res);
-        history.push('petitions/27');
+        history.push(`petitions/7`);
       })
       .catch(function (error) {
         console.log(error);
       });
-    // .post(postUrl, reqBody)
-    // .then(function (res) {
-    //   console.log(res);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // })
-    // .then(function (res) {
-    //   console.log(res);
-    //   history.push(postUrl + `${res.data.id}`);
-    // });
   };
+
   return (
     <ModalWrapper>
       <div>
