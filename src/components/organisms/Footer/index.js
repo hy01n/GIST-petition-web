@@ -8,7 +8,10 @@ const Footer = () => {
 const StyledFooter = styled.div`
   height: 130px;
   background-color: #ccc;
-  margin-top: 220px;
+  display: block;
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
 `;
 
 export default Footer;

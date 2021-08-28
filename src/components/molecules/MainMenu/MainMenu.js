@@ -24,9 +24,16 @@ const MainMenu = ({ navLinkColor, labels, fontSize }) => {
           </NavLink>
         </li>
         <li className={styles[`${fontSize}`]}>
-          <NavLink to="/notfound" exact activeStyle={{ color: navLinkColor }}>
+          {/* <NavLink to="/notfound" exact activeStyle={{ color: navLinkColor }}>
             {labels[3]}
-          </NavLink>
+          </NavLink> */}
+          <a
+            href="https://sites.google.com/view/gistcommunicate/%ED%99%88"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {labels[3]}
+          </a>
         </li>
       </ul>
     </div>
