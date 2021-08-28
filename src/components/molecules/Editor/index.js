@@ -5,23 +5,23 @@ import 'react-quill/dist/quill.snow.css';
 const Editor = (props) => {
   const modules = {
     toolbar: [
-      //[{ 'font': [] }],
-      [{ header: [1, 2, false] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [
-        { list: 'ordered' },
-        { list: 'bullet' },
-        { indent: '-1' },
-        { indent: '+1' },
-      ],
-      ['link', 'image'],
-      [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
-      ['clean'],
+      // [{ 'font': [] }],
+      // [{ header: [1, 2, false] }],
+      // ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      // [
+      //   { list: 'ordered' },
+      //   { list: 'bullet' },
+      //   { indent: '-1' },
+      //   { indent: '+1' },
+      // ],
+      // ['link', 'image'],
+      // [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
+      // ['clean'],
     ],
   };
 
   const formats = [
-    //'font',
+    'font',
     'header',
     'bold',
     'italic',

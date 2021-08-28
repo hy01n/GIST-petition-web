@@ -42,11 +42,11 @@ const MainVisual = () => {
       <div className="inner">
         <div className="slogan">
           <span ref={(el) => (top = el)} className="fade_in top">
-            미래를 향한
+            W e&nbsp;&nbsp;&nbsp;A r e
           </span>
           <br />
           <span ref={(el) => (bottom = el)} className="fade_in bottom">
-            창의적 과학기술의 요람
+            G I S T
           </span>
         </div>
         <div className="more">

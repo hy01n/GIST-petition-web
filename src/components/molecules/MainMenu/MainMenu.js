@@ -35,7 +35,7 @@ const MainMenu = ({ navLinkColor, labels, fontSize }) => {
 
 MainMenu.defaultProps = {
   navLinkColor: '#df3127',
-  labels: ['청원하기', '모든 청원', '나의 청원', '건의함 모아보기'],
+  labels: ['청원하기', '모든 청원', '나의 청원', '공식창구 모아보기'],
   fontSize: 'medium',
 };
 

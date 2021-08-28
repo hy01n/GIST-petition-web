@@ -1,11 +1,14 @@
 /* HEADER */
 
 .inner {
+  overflow: hidden;
+
   height: 130px;
   .logo {
     display: block;
     position: absolute;
-    width: 130px;
+    width: 220px;
     bottom: 10px;
+    transform: translateY(50px);
   }
 }

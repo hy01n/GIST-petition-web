@@ -2,7 +2,7 @@ import React from 'react';
 import MainMenu from 'components/molecules/MainMenu/MainMenu';
 import SubMenu from 'components/molecules/SubMenu/SubMenu';
 import styles from './Header.module.scss';
-import logo from 'assets/images/korea_mark.jpg';
+import logo from 'assets/images/logo.jpg';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -14,7 +14,7 @@ const Header = () => {
     '청원하기',
     '모든 청원',
     '나의 청원',
-    '건의함 모아보기',
+    '공식창구 모아보기',
   ];
   const fontSize = 'medium';
 

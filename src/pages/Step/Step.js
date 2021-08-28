@@ -10,7 +10,7 @@ const Step = () => {
     user_id: 1,
     title: '',
     description: '',
-    category: '분류1',
+    category: '기숙사(대학/대학원)',
   });
   console.log(postInfo.description);
   return (
