@@ -17,24 +17,26 @@ import 'App.scss';
 
 function App() {
   return (
-    <Router>
-      <header>
-        <Header />
-      </header>
-      <Switch>
-        <Route path="/signup" component={SignUp} />
-        <Route path="/login" component={Login} />
-        <Route path="/petitions/:id" component={PostView} />
-        <Route path="/petitions" component={PostList} />
-        <Route path="/step" component={Step} />
-        <Route path="/mypage" component={MyPage} />
-        <Route path="/forgetid" component={ForgetID} />
-        <Route path="/forgetpwd" component={ForgetPWD} />
-        <Route path="/" exact component={Main} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </Router>
+    <>
+      <Router>
+        <header>
+          <Header />
+        </header>
+        <Switch>
+          <Route path="/signup" component={SignUp} />
+          <Route path="/login" component={Login} />
+          <Route path="/petitions/:id" component={PostView} />
+          <Route path="/petitions" component={PostList} />
+          <Route path="/step" component={Step} />
+          <Route path="/mypage" component={MyPage} />
+          <Route path="/forgetid" component={ForgetID} />
+          <Route path="/forgetpwd" component={ForgetPWD} />
+          <Route path="/" exact component={Main} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 

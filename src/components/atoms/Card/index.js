@@ -13,7 +13,7 @@ const StyledCard = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  margin: 230px auto 0;
+  margin: 230px auto 230px;
   padding: 2.3%;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;

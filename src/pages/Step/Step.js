@@ -14,20 +14,22 @@ const Step = () => {
   });
   console.log(postInfo.description);
   return (
-    <Card maxWidth="900px">
-      {showConfirmModal && (
-        <PostModal
+    <>
+      <Card maxWidth="900px">
+        {showConfirmModal && (
+          <PostModal
+            setShowConfirmModal={setShowConfirmModal}
+            postInfo={postInfo}
+          />
+        )}
+        <Precuation />
+        <PostEditor
           setShowConfirmModal={setShowConfirmModal}
           postInfo={postInfo}
+          setPostInfo={setPostInfo}
         />
-      )}
-      <Precuation />
-      <PostEditor
-        setShowConfirmModal={setShowConfirmModal}
-        postInfo={postInfo}
-        setPostInfo={setPostInfo}
-      />
-    </Card>
+      </Card>
+    </>
   );
 };
 
