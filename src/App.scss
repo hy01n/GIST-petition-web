@@ -26,7 +26,8 @@ header {
 }
 
 .inner {
-  width: 950px;
+  max-width: 950px;
+  width: calc(100% - 150px);
   margin: 0 auto;
   position: relative;
 }

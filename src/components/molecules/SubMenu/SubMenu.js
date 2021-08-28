@@ -12,10 +12,22 @@ const SubMenu = ({ labels }) => {
           <Link to="/">{labels[0]}</Link>
         </li>
         <li>
-          <Link to="/">{labels[1]}</Link>
+          <a
+            href="https://sites.google.com/view/gistcommunicate/%ED%95%99%EB%B6%80-%EB%8B%B4%EB%8B%B9%EC%9E%90?authuser=0"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {labels[1]}
+          </a>
         </li>
         <li>
-          <Link to="/">{labels[2]}</Link>
+          <a
+            href="https://sites.google.com/view/gistcommunicate/%ED%95%99%EC%83%9D-%EC%A0%9C%EC%95%88%EB%AF%BC%EC%9B%90-%EC%B2%98%EB%A6%AC%EA%B3%BC%EC%A0%95-%EC%95%88%EB%82%B4?authuser=0"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {labels[2]}
+          </a>
         </li>
         <li>
           <Link to="/login">
