@@ -4,9 +4,27 @@
   font-size: 20px;
 }
 
-.Container ul {
-  margin-left: 30px;
+.Container .step {
+  margin: 30px;
+  padding: 10px;
+  line-height: 160%;
+  color: rgb(66, 66, 66);
+}
+.Container .step li {
+  margin-top: 20px;
+}
+.Container .step li p {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.Container .principles {
+  margin: 30px;
   padding: 10px;
   line-height: 180%;
   color: #333;
+}
+
+.Container .principles li {
+  margin-top: 5px;
 }

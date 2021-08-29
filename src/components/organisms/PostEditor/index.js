@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button';
@@ -22,6 +22,17 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
   const goBack = (path) => {
     history.push(path);
   };
+
+  const [titleLong, setTitleLong] = useState(false);
+
+  const titleLength = (value) => {
+    if (value > 10) {
+      setTitleLong(true);
+    } else {
+      setTitleLong(false);
+    }
+  };
+
   return (
     <EditorWrapper>
       <Title size="h3" text="제목"></Title>
@@ -31,7 +42,12 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
         value={postInfo.title}
         // post Test를 한 뒤엔 useRef & 컴포넌트간 통신을 이용해서 구현하기
         titleInput="1"
-        onChange={(e) => setPostInfo({ ...postInfo, title: e.target.value })}
+        onChange={(e) => {
+          setPostInfo({ ...postInfo, title: e.target.value });
+          console.log(e.target.value.length);
+          titleLength(e.target.value.length);
+          console.log(titleLong);
+        }}
         kinds="normal-input"
       />
       <Title size="h3" text="카테고리"></Title>
@@ -63,7 +79,11 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
           width="40%"
           type="button"
           backgroundColor="#5a5e5d"
-          onClick={() => setShowConfirmModal(true)}
+          onClick={() =>
+            !titleLong
+              ? alert('제목 길이가 너무 짧습니다')
+              : setShowConfirmModal(true)
+          }
           ButtonText={'작성 완료'}
         ></Button>
       </ButtonWrapper>
