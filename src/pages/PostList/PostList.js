@@ -4,7 +4,7 @@ import Pagination from 'components/molecules/Pagination';
 import FilterAnswer from 'components/molecules/FilterAnswer/FilterAnswer';
 import Loading from 'components/atoms/Loading/Loading';
 import Title from 'components/atoms/Title';
-import PostTable from 'components/organisms/PostTable';
+import PostTable from 'components/organisms/PostTable/PostTable';
 import FilterDropDown from 'components/organisms/FilterDropdown';
 import styles from './PostList.module.scss';
 
@@ -57,7 +57,7 @@ const PostList = () => {
       const indexOfLast = currentPage * postsPerPage;
       const indexOfFirst = indexOfLast - postsPerPage;
 
-      return postlist.slice(indexOfFirst, indexOfLast).reverse();
+      return postlist.slice(indexOfFirst, indexOfLast);
     },
     [currentPage],
   );
@@ -82,12 +82,12 @@ const PostList = () => {
     },
     {
       id: 2,
-      content: '기숙사(대학/대학원)',
+      content: '기숙사',
       onClick: () =>
         setFilterInfo({
           ...filterInfo,
           order: 'RECOMMENDED',
-          category: '기숙사(대학/대학원)',
+          category: '기숙사',
         }),
     },
     {
@@ -180,7 +180,7 @@ const PostList = () => {
         </div>
       ) : (
         <section className={styles['post-list']}>
-          <div className="inner">
+          <div className={styles['inner']}>
             <Title size="h3" text="청원 목록" />
             <div className="filter">
               <FilterAnswer
@@ -207,7 +207,7 @@ const PostList = () => {
             </div>
             <div className={styles['contents']}>
               <PostTable
-                header={['분류', '제목', '청원 날짜', '참여 인원']}
+                header={['분류', '제목', '날짜', '참여인원']}
                 bodys={currentPosts(postList).map((post) => [
                   {
                     id: 1,

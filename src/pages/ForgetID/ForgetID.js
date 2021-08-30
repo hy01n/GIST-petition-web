@@ -21,25 +21,27 @@ const ForgetID = () => {
     alignItems: 'center',
   };
   return (
-    <Card>
-      <div style={center}>
-        <Title text="아이디를 잊으셨나요?" />
-        <h5>가입시 등록한 이메일주소를 입력해 주세요.</h5>
-      </div>
-      <InputText
-        type="text"
-        placeholder="Email"
-        isRequired="1"
-        kinds="info-input"
-      />
-      <Button {...props} />
-      <Link className={styles['link']} style={center} to="forgetpwd">
-        비밀번호 찾기
-      </Link>
-      <Link className={styles['link']} style={center} to="login">
-        로그인하러 가기
-      </Link>
-    </Card>
+    <section className={styles['wrap']}>
+      <Card>
+        <div style={center}>
+          <Title text="아이디를 잊으셨나요?" />
+          <h5>가입시 등록한 이메일주소를 입력해 주세요.</h5>
+        </div>
+        <InputText
+          type="text"
+          placeholder="Email"
+          isRequired="1"
+          kinds="info-input"
+        />
+        <Button {...props} />
+        <Link className={styles['link']} style={center} to="forgetpwd">
+          비밀번호 찾기
+        </Link>
+        <Link className={styles['link']} style={center} to="login">
+          로그인하러 가기
+        </Link>
+      </Card>
+    </section>
   );
 };
 

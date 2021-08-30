@@ -43,37 +43,39 @@ const Login = () => {
   // };
 
   return (
-    <Card>
-      <div style={center}>
-        <Title text="지스트 청원 사이트" />
-        <h5>Login</h5>
-      </div>
-      <InputText
-        type="text"
-        placeholder="아이디"
-        kinds="info-input"
-        name="userId"
-      />
-      <InputText
-        type="password"
-        placeholder="비밀번호"
-        kinds="info-input"
-        name="userPassword"
-      />
-      <Button text="로그인" type="submit" {...props} />
-      <Link className={styles['link']} style={center} to="/signup">
-        회원가입
-      </Link>
-      <div className={styles['forgetIdPwd']}>
-        <Link className={styles['link']} to="forgetid">
-          아이디
+    <section className={styles['wrap']}>
+      <Card>
+        <div style={center}>
+          <Title text="지스트 청원 사이트" />
+          <h5>Login</h5>
+        </div>
+        <InputText
+          type="text"
+          placeholder="아이디"
+          kinds="info-input"
+          name="userId"
+        />
+        <InputText
+          type="password"
+          placeholder="비밀번호"
+          kinds="info-input"
+          name="userPassword"
+        />
+        <Button text="로그인" type="submit" {...props} />
+        <Link className={styles['link']} style={center} to="/signup">
+          회원가입
         </Link>
-        <span>/</span>
-        <Link className={styles['link']} to="forgetpwd">
-          비밀번호를 잊으셨나요?
-        </Link>
-      </div>
-    </Card>
+        <div className={styles['forgetIdPwd']}>
+          <Link className={styles['link']} to="forgetid">
+            아이디
+          </Link>
+          <span>/</span>
+          <Link className={styles['link']} to="forgetpwd">
+            비밀번호를 잊으셨나요?
+          </Link>
+        </div>
+      </Card>
+    </section>
   );
 };
 

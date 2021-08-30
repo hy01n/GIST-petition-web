@@ -19,10 +19,12 @@ const MainNumOfPosts = () => {
 
   return (
     <div className="main_num_of_posts">
-      지금 까지
+      <div>지금 까지</div>
       {/* <br />총 <span>{count}</span>건의 청원과 <span>{count}</span>건의 답변이
       <br /> */}
-      <br />총 <span>{count}</span>건의 청원이 올라왔습니다
+      <div>
+        총 <span>{count}</span>건의 청원이 올라왔습니다
+      </div>
     </div>
   );
 };

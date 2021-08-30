@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Loading from 'components/atoms/Loading/Loading';
 import axios from 'axios';
 import Pagination from 'components/molecules/Pagination';
-import PostTable from 'components/organisms/PostTable';
+import PostTable from 'components/organisms/PostTable/PostTable';
 import styles from './MyPage.module.scss';
 import Title from 'components/atoms/Title';
 
@@ -47,11 +47,11 @@ const MyPage = () => {
         </div>
       ) : (
         <section className={styles['my-post-list']}>
-          <div className="inner">
+          <div className={styles['inner']}>
             <Title size="h3" text="내 청원 보기" />
             <div className={styles['contents']}>
               <PostTable
-                header={['분류', '제목', '청원 날짜', '참여 인원']}
+                header={['분류', '제목', '날짜', '참여인원']}
                 bodys={currentPosts(postList).map((post) => [
                   {
                     id: 1,

@@ -3,18 +3,19 @@ import Card from 'components/atoms/Card';
 import Precuation from 'components/organisms/Precaution';
 import PostEditor from 'components/organisms/PostEditor';
 import PostModal from 'components/organisms/PostModal';
+import 'pages/Step/index.css';
 
 const Step = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [postInfo, setPostInfo] = useState({
+    // user_id 토큰에서 가져오는 방식으로 수정해야함.
     user_id: 1,
     title: '',
     description: '',
-    category: '기숙사(대학/대학원)',
+    category: '기숙사',
   });
-  console.log(postInfo.description);
   return (
-    <>
+    <section className="wrap">
       <Card maxWidth="900px">
         {showConfirmModal && (
           <PostModal
@@ -29,7 +30,7 @@ const Step = () => {
           setPostInfo={setPostInfo}
         />
       </Card>
-    </>
+    </section>
   );
 };
 

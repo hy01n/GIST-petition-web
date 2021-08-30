@@ -21,29 +21,31 @@ const ForgetPWD = () => {
     alignItems: 'center',
   };
   return (
-    <Card>
-      <div style={center}>
-        <Title text="비밀번호를 잊으셨나요?" />
-        <h5>가입시 등록한 아이디와 이메일주소를 입력해 주세요.</h5>
-      </div>
-      <InputText
-        type="text"
-        placeholder="ID"
-        kinds="info-input"
-        isRequired="1"
-      />
-      <InputText
-        type="text"
-        placeholder="Email"
-        kinds="info-input"
-        isRequired="1"
-      />
+    <section className={styles['wrap']}>
+      <Card>
+        <div style={center}>
+          <Title text="비밀번호를 잊으셨나요?" />
+          <h5>가입시 등록한 아이디와 이메일주소를 입력해 주세요.</h5>
+        </div>
+        <InputText
+          type="text"
+          placeholder="ID"
+          kinds="info-input"
+          isRequired="1"
+        />
+        <InputText
+          type="text"
+          placeholder="Email"
+          kinds="info-input"
+          isRequired="1"
+        />
 
-      <Button {...props} />
-      <Link className={styles['link']} style={center} to="login">
-        로그인하러 가기
-      </Link>
-    </Card>
+        <Button {...props} />
+        <Link className={styles['link']} style={center} to="login">
+          로그인하러 가기
+        </Link>
+      </Card>
+    </section>
   );
 };
 
