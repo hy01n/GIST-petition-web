@@ -1,9 +1,15 @@
 .post-list {
-  margin-top: 200px;
+  margin: 200px 0 240px;
+  padding: 0 15px;
 
-  .filter {
-    .drop-down {
-      display: flex;
+  .inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    .filter {
+      .drop-down {
+        display: flex;
+      }
     }
   }
 }

@@ -14,7 +14,7 @@ const StyledCard = styled.div`
   justify-content: center;
 
   margin: 230px auto 230px;
-  padding: 2.3%;
+  padding: 42px 42px;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);

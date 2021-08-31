@@ -7,10 +7,10 @@ const Footer = () => {
 
 const StyledFooter = styled.div`
   height: 130px;
-  background-color: #ccc;
+  background-color: #84838b;
   display: block;
   position: absolute;
-  bottom: -200px;
+  bottom: 0;
   width: 100%;
 `;
 

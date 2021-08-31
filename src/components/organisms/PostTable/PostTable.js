@@ -5,9 +5,9 @@ import styles from './PostTable.module.scss';
 const PostTableColumn = ({ data }) => {
   console.log(data);
   return data.header === 'title' ? (
-    <Link to={`/petitions/${data.postId}`}>
-      <td>{data.content}</td>
-    </Link>
+    <td>
+      <Link to={`/petitions/${data.postId}`}>{data.content}</Link>
+    </td>
   ) : (
     <td>{data.content}</td>
   );

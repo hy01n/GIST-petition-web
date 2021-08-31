@@ -6,7 +6,6 @@ const InputText = ({ ...props }) => {
   const onChangeValue = props.titleInput
     ? props.onChange
     : (e) => props.onChangeValue(e.target.value);
-  console.log(props.value);
   return (
     <StyledInputText
       required={props.isRequired && true}

@@ -13,7 +13,6 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
   };
 
   const onEditorChange = (e) => {
-    console.log(e);
     setPostInfo({ ...postInfo, description: e });
   };
 
@@ -38,15 +37,13 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
       <Title size="h3" text="제목"></Title>
       <InputText
         type="text"
-        placeholder="청원 제목을 입력해주세요."
+        placeholder="청원 제목을 입력해주세요. (10자 이상)"
         value={postInfo.title}
         // post Test를 한 뒤엔 useRef & 컴포넌트간 통신을 이용해서 구현하기
         titleInput="1"
         onChange={(e) => {
           setPostInfo({ ...postInfo, title: e.target.value });
-          console.log(e.target.value.length);
           titleLength(e.target.value.length);
-          console.log(titleLong);
         }}
         kinds="normal-input"
       />
@@ -55,7 +52,7 @@ const PostEditor = ({ setShowConfirmModal, postInfo, setPostInfo }) => {
         <option selected disabled>
           카테고리를 선택해주세요.
         </option>
-        <option value="기숙사(대학/대학원)">기숙사(대학/대학원)</option>
+        <option value="기숙사">기숙사</option>
         <option value="시설운영">시설운영</option>
         <option value="진로/취업">진로/취업</option>
         <option value="학적/교과/장학">학적/교과/장학</option>

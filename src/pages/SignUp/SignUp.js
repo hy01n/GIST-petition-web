@@ -58,21 +58,22 @@ const SignUp = () => {
   };
 
   return (
-    <Card>
-      <div style={center}>
-        <Title text="지스트 청원 사이트" />
-        <h5>계정 만들기</h5>
-      </div>
-      <InputText
-        type="text"
-        placeholder="이름"
-        kinds="info-input"
-        name="username"
-        value={nameValue}
-        onChangeValue={setNameValue}
-      />
-      {/* <InputText type="password" placeholder="입학년도" kinds="info-input" /> */}
-      {/* <div className = "selectBox">
+    <section className={styles['wrap']}>
+      <Card>
+        <div style={center}>
+          <Title text="지스트 청원 사이트" />
+          <h5>계정 만들기</h5>
+        </div>
+        <InputText
+          type="text"
+          placeholder="이름"
+          kinds="info-input"
+          name="username"
+          value={nameValue}
+          onChangeValue={setNameValue}
+        />
+        {/* <InputText type="password" placeholder="입학년도" kinds="info-input" /> */}
+        {/* <div className = "selectBox">
           <select name="" id="track">
             <option value="">대학생</option>
             <option value="">대학원생</option>
@@ -88,47 +89,48 @@ const SignUp = () => {
             <option value="">환경공학</option>
           </select>
         </div> */}
-      {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
-      {/* <LoginInput type="text" placeholder="ID"/>
+        {/* <InputButtonPair type="text" placeholder="ID" text="중복확인" /> */}
+        {/* <LoginInput type="text" placeholder="ID"/>
         <LoginInput type="text" placeholder="Email" /> */}
-      <InputText
-        type="text"
-        placeholder="ID"
-        kinds="info-input"
-        name="userId"
-        value={idValue}
-        onChangeValue={setIdValue}
-      />
-      <InputText
-        type="text"
-        placeholder="Email"
-        kinds="info-input"
-        name="email"
-        value={emailValue}
-        onChangeValue={setEmailValue}
-      />
-      <InputText
-        type="password"
-        placeholder="Password"
-        kinds="info-input"
-        name="password"
-        value={passwordValue}
-        onChangeValue={setPasswordValue}
-      />
-      {/* <InputText
+        <InputText
+          type="text"
+          placeholder="ID"
+          kinds="info-input"
+          name="userId"
+          value={idValue}
+          onChangeValue={setIdValue}
+        />
+        <InputText
+          type="text"
+          placeholder="Email"
+          kinds="info-input"
+          name="email"
+          value={emailValue}
+          onChangeValue={setEmailValue}
+        />
+        <InputText
+          type="password"
+          placeholder="Password"
+          kinds="info-input"
+          name="password"
+          value={passwordValue}
+          onChangeValue={setPasswordValue}
+        />
+        {/* <InputText
           type="password"
           placeholder="Password check"
           kinds="info-input"
         /> */}
-      {/* <LoginInput type="checkbox" text="" />
+        {/* <LoginInput type="checkbox" text="" />
         지스트 청원 사이트
         <InternalLink text="가입약관" />에 동의합니다. */}
-      {/* <LoginInput type="text" /> */}
-      <Button {...props} onClickButton={() => handleSubmit()} type="submit" />
-      <Link className={styles['link']} style={center} to="login">
-        로그인하러 가기
-      </Link>
-    </Card>
+        {/* <LoginInput type="text" /> */}
+        <Button {...props} onClickButton={() => handleSubmit()} type="submit" />
+        <Link className={styles['link']} style={center} to="login">
+          로그인하러 가기
+        </Link>
+      </Card>
+    </section>
   );
 };
 

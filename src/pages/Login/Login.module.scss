@@ -1,9 +1,12 @@
-.forgetIdPwd {
-  display: flex;
-  justify-content: center;
-}
-.link {
-  &:hover {
-    text-decoration: underline;
+.wrap {
+  padding: 0 15px;
+  .forgetIdPwd {
+    display: flex;
+    justify-content: center;
+  }
+  .link {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -74,6 +74,7 @@ const ModalWrapper = styled.div`
 
 const StyledImg = styled.img`
   width: 100%;
+  max-width: 600px;
 `;
 
 export default PostModal;

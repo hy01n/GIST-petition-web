@@ -4,7 +4,7 @@ import Card from 'components/atoms/Card';
 import Contents from 'components/molecules/Contents';
 import CommentInput from 'components/molecules/CommentInput';
 import CommentList from 'components/organisms/CommentList';
-
+import 'pages/PostView/index.css';
 const PostView = ({ history, match }) => {
   const { id } = match.params;
 
@@ -18,16 +18,18 @@ const PostView = ({ history, match }) => {
   };
 
   return (
-    <Card maxWidth="900px">
-      <Contents id={id} />
-      <CommentInput id={id} />
-      <CommentList id={id} />
+    <section className="wrap">
+      <Card maxWidth="900px">
+        <Contents id={id} />
+        <CommentInput id={id} />
+        <CommentList id={id} />
 
-      <Button
-        onClick={() => history.push('/petitions')}
-        {...indexBtnProps}
-      ></Button>
-    </Card>
+        <Button
+          onClick={() => history.push('/petitions')}
+          {...indexBtnProps}
+        ></Button>
+      </Card>
+    </section>
   );
 };
 
