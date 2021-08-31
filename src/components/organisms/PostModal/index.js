@@ -70,6 +70,9 @@ const ModalWrapper = styled.div`
   transform: translateX(-50%);
   background-color: white;
   z-index: 1;
+  @media all and (max-width: 685px) {
+    width: 320px;
+  }
 `;
 
 const StyledImg = styled.img`

@@ -61,6 +61,11 @@
   }
 }
 
+@media all and (max-width: 505px) {
+  .contents__table {
+    font-size: 14px;
+  }
+}
 @media all and (max-width: 400px) {
   thead {
     tr {

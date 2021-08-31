@@ -31,7 +31,8 @@ const SubMenu = ({ labels }) => {
         </li>
         <li>
           <Link to="/login">
-            <div className="material-icons">login</div>Login
+            <div className="material-icons">login</div>
+            <span className={styles.logincontents}>Login</span>
           </Link>
         </li>
       </ul>

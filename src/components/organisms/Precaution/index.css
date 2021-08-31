@@ -5,8 +5,7 @@
 }
 
 .Container .step {
-  margin: 30px;
-  padding: 10px;
+  padding: 20px 40px;
   line-height: 160%;
   color: rgb(66, 66, 66);
 }
@@ -19,12 +18,24 @@
 }
 
 .Container .principles {
-  margin: 30px;
-  padding: 10px;
+  padding: 20px 10px 20px 30px;
+
   line-height: 180%;
   color: #333;
 }
 
 .Container .principles li {
+  list-style-type: decimal;
   margin-top: 5px;
+}
+
+@media all and (max-width: 505px) {
+  .Container .step {
+    margin: 0px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  .Container .principles {
+    font-size: 14px;
+  }
 }

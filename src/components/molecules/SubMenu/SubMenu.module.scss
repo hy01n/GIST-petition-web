@@ -23,3 +23,12 @@
     }
   }
 }
+
+@media all and (max-width: 505px) {
+  .sub_menu {
+    font-size: 14px;
+  }
+  .logincontents {
+    display: none;
+  }
+}

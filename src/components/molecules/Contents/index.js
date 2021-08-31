@@ -60,5 +60,8 @@ const StyledDiv = styled.div`
 
 const PostViewContent = styled.div`
   margin: 0 0 50px;
+  @media all and (max-width: 505px) {
+    font-size: 14px;
+  }
 `;
 export default Contents;

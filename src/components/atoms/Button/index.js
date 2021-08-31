@@ -34,6 +34,10 @@ const StyledButton = styled.button`
       width: ${props.width};
       height: ${props.height};
     `};
+  @media all and (max-width: 685px) {
+    font-size: 14px;
+    max-height: 45px;
+  }
 `;
 
 Button.propTypes = {

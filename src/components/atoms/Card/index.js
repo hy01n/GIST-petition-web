@@ -24,6 +24,9 @@ const StyledCard = styled.div`
   ${(props) => css`
     max-width: ${props.maxWidth};
   `}
+  @media all and (max-width: 505px) {
+    padding: 42px 20px;
+  }
 `;
 
 Card.propTypes = {
