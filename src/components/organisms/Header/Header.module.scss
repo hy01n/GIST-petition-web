@@ -1,11 +1,24 @@
 /* HEADER */
 
 .inner {
+  max-width: 950px;
+  width: calc(100% - 150px);
+  margin: 0 auto;
+  position: relative;
   height: 130px;
   .logo {
     display: block;
     position: absolute;
     width: 220px;
     bottom: 10px;
+  }
+}
+
+@media all and (max-width: 1020px) {
+  .inner {
+    max-width: 1085px;
+    width: calc(100% - 15px);
+    margin: 0 auto;
+    position: relative;
   }
 }

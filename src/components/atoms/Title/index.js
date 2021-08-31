@@ -20,11 +20,23 @@ const Title = ({ ...props }) => {
   }
 };
 
-const H1 = styled.h1``;
+const H1 = styled.h1`
+  @media all and (max-width: 505px) {
+    font-size: 1.3em;
+  }
+`;
 
-const H2 = styled.h2``;
+const H2 = styled.h2`
+  @media all and (max-width: 505px) {
+    font-size: 1.15em;
+  }
+`;
 
-const H3 = styled.h3``;
+const H3 = styled.h3`
+  @media all and (max-width: 505px) {
+    font-size: 0.85em;
+  }
+`;
 
 const H4 = styled.h4``;
 

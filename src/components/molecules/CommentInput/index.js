@@ -55,6 +55,9 @@ const CommentInput = ({ id }) => {
 
 const StyledCommentInput = styled.div`
   display: flex;
+  @media all and (max-width: 685px) {
+    height: 45px;
+  }
 `;
 
 export default CommentInput;

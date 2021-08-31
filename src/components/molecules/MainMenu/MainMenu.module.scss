@@ -1,4 +1,8 @@
-.main_menu {
+.btn {
+  display: none;
+}
+
+@media all and (min-width: 1020px) {
   .menu {
     position: absolute;
     bottom: 10px;
@@ -8,50 +12,87 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    li {
-      font-weight: 600;
-      &::before {
-        content: '';
-        width: 1px;
-        height: 18px;
-        background-color: #e5e5e5;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-      }
-      &:nth-child(1):before {
-        display: none;
-      }
-      a {
-        color: #333;
-        margin: 0 15px;
-      }
-      &:hover a {
-        color: #7c7365;
-      }
-      &.small {
-        font-size: 12px;
-      }
-      &.medium {
-        font-size: 18px;
-      }
-      &.large {
-        font-size: 24px;
-      }
+  }
+}
+
+@media all and (min-width: 685px) {
+  .menu {
+    position: absolute;
+    bottom: 10px;
+    left: 1;
+    right: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 685px) {
+  .menu {
+    display: none;
+  }
+  .btn {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background-color: transparent;
+  }
+}
+
+.main_menu {
+  li {
+    font-weight: 600;
+    &::before {
+      content: '';
+      width: 1px;
+      height: 18px;
+      background-color: #e5e5e5;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    &:nth-child(1):before {
+      display: none;
+    }
+    a {
+      color: #333;
+      margin: 0 15px;
+    }
+    &:hover a {
+      color: #7c7365;
+    }
+    &.small {
+      font-size: 12px;
+    }
+    &.medium {
+      font-size: 18px;
+    }
+    &.large {
+      font-size: 24px;
     }
   }
 }
 
-@media all and (max-width: 1020px) {
-  .menu {
-    position: fixed;
-    bottom: 10px;
-    left: 80px;
-    right: 10px;
-    width: 500px;
-    margin: auto;
+.mob_wrap {
+  position: absolute;
+  top: 130px;
+  width: 100vw;
+  height: 85.05747126436vh;
+  background: #df3127;
+  opacity: 0.83;
+  transform: translateX(-8px);
+
+  z-index: 1;
+  .mob_menu {
+    height: 60%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      font-size: 22px;
+      color: #fff;
+    }
   }
 }
