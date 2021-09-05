@@ -12,6 +12,7 @@ import ForgetID from 'pages/ForgetID/ForgetID';
 import ForgetPWD from 'pages/ForgetPWD/ForgetPWD';
 import Header from 'components/organisms/Header/Header';
 import Footer from 'components/organisms/Footer';
+import ScrollToTop from 'components/atoms/ScrollToTop';
 
 import 'App.scss';
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <header>
           <Header />
         </header>
