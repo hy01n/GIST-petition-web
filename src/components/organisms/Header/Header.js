@@ -4,6 +4,7 @@ import SubMenu from 'components/molecules/SubMenu/SubMenu';
 import styles from './Header.module.scss';
 import logo from 'assets/images/logo.jpg';
 import { Link } from 'react-router-dom';
+
 const Header = () => {
   const gistColor = '#df3127';
 
@@ -19,7 +20,12 @@ const Header = () => {
   return (
     <div className={styles['inner']}>
       <Link to="/">
-        <img src={logo} className={styles['logo']} alt="지스트" />
+        <img
+          src={logo}
+          className={styles['logo']}
+          alt="지스트"
+          onClick="window.location.reload()"
+        />
       </Link>
       <SubMenu labels={subMenuLabels}></SubMenu>
       <MainMenu
