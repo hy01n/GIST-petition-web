@@ -11,16 +11,24 @@ const Precuation = () => {
         <div className="step">
           <ul>
             <li>
-              <strong>Step 1. 검색</strong>
+              <strong>Step 1. 기존 청원 확인</strong>
               <br />
               <p>
                 새 청원글 작성 전 유사한 내용의 청원이 진행 중인지 먼저
                 확인해주세요. 새 청원글을 작성하기보다 유사한 기존 청원에
-                동의하시면 구성원의 뜻을 모으는데 도움이 됩니다.
+                동의하시면 GIST 구성원의 뜻을 모으는데 도움이 됩니다.
               </p>
             </li>
             <li>
-              <strong>Step 2. 카테고리 선택</strong>
+              <strong>Step 2. 제목 입력</strong>
+              <br />
+              <p>
+                청원 내용을 대표하는 제목을 입력해주세요. 제목의 내용은 10자
+                이상으로 제한합니다.
+              </p>
+            </li>
+            <li>
+              <strong>Step 3. 카테고리 선택</strong>
               <br />
               <p>
                 청원 내용과 관련된 분야를 선택해주세요. 참여자들이 청원 목록 내
@@ -28,20 +36,11 @@ const Precuation = () => {
               </p>
             </li>
             <li>
-              <strong>Step 3. 내용 입력</strong>
+              <strong>Step 4. 내용 입력</strong>
               <br />
               <p>
                 사람들이 쉽게 읽고 이해할 수 있는 내용으로 작성해주시면 됩니다.
                 글자 수 제한은 없습니다.
-              </p>
-            </li>
-            <li>
-              <strong>Step 4. 링크 첨부</strong>
-              <br />
-              <p>
-                청원 내용과 관련된 링크 주소를 입력해주세요. 다만 청원 내용과
-                관련이 없거나 부적절한 링크는 관리자에 의해 숨김처리 될 수
-                있습니다.
               </p>
             </li>
             <li>
