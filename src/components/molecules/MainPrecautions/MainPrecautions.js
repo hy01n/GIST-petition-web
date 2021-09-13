@@ -9,7 +9,7 @@ const MainPrecautions = () => {
     <section className="precautions">
       <div className="precautions-line">
         <div className="bg-left"></div>
-        <div className="bg-right"></div>
+        <div className={`bg-right ${isCollapsed_left ? 'open' : ''} `}></div>
         <div className="inner">
           <div className="inner__left">
             <h3>이런 청원은 삭제·숨김 처리될 수 있습니다</h3>
@@ -26,7 +26,7 @@ const MainPrecautions = () => {
             </div>
           </div>
 
-          <div className="inner__right">
+          <div className={`inner__right ${isCollapsed_left ? 'open' : ''} `}>
             <h3>이런 청원은 답변이 어려울 수 있습니다</h3>
             <div
               className="material-icons toggle-precuation-right"
